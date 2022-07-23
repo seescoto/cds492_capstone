@@ -1,0 +1,65 @@
+\documentclass[]{article}
+\usepackage[margin = 1.5cm]{geometry}
+\usepackage{relsize} %for subtitle thats smaller
+\newcommand{\comment}[1]{} %multi-line comments
+
+%opening
+\title{Fake News? 
+	\\\smaller[2]{}Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
+	%\\Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
+\author{Sofia Escoto}
+
+\begin{document}
+	\maketitle
+	
+	\section{Introduction}
+		
+		%1.1. Introduction - state your goal and hypothesis, why it is original and why nobody solved it before (10p)
+		
+		The spread of misinformation may be one of the biggest problems facing humanity, exacerbated with the popularity of social media. Today, anyone can log into their computer and write something that the entire world can see. While the malicious spread of misinformation is  often seen in regards to politics, it's not exclusive to it. Though anyone with a computer can also access a search engine and, usually with relative ease, tell if a statement is false based on the results, it's rare that a person will take the time out of their day to do so, and as such may continue to spread the false statement.
+		
+		With a machine learning algorithm that takes a statement (ex. a blue whale can weigh up to 5,000 pounds) classifies the statement as either true or false, the user doesn't have to take any time to Google it on their own. With this easy-to-use feature implemented in websites such as Twitter, Facebook, or Reddit, misinformation will be easily clocked and therefore is unlikely to ``go viral" and spread to more users.
+		
+		Though machine learning has been used for fact-checking and determining the credibility of a claim, most of its application has been in analyzing full-length articles using context clues and sources as to whether the information is credible or on individual statements that were trained on sentiment analysis to use common sense.
+		
+
+		\comment{
+			 What is the problem?
+			 Why is it interesting and important?
+			 Why is it hard? (E.g., why do naive approaches fail?)
+			 Why hasn't it been solved before? (Or, what's wrong with previous proposed solutions? How does mine differ?)
+			 What are the key components of my approach and results? Also include any specific limitations.
+			
+			question: is it possible to determine whether an individual statement (given no other context) is true or false with 80\% accuracy?
+			
+			goal: determine whether a statement found online can be trusted without making the user go and look it up and determine for themselves
+			
+			h0: it is not possible to predict the accuracy of common statements with 80\% accuracy or above through simple web scraping and sentiment analysis
+			
+			h1: it is possible to predict the accuracy of common statements with 80\% accuracy or above using simple web scraping and sentiment analysis.
+			
+			original because most fake news models are focused solely on political content and scanning website credibility, not focusing on general facts and figures. hasn't been solved before bc it's easy to find these answers with a google search. it's still important, though, because most people DONT go find the answers, simply take them at face value
+		
+		} 
+		
+		
+	\section{Literature Review}
+		
+		%1.2. Literature review - describe similar work that has been done, with references, and where that work failed short of answering your question (10p)
+		
+		fake news - pdf on desktop
+		- fake news can be described as any "news article that is intentionally and verifiably false." (introduction pg 18 ?)
+		- 
+		
+		\cite{kim14}
+		
+		
+	
+	\section{Data}
+	
+		%1.3. Add a link to the dataset/s you plan to work with (must be open source); if the dataset is not very big, you are also welcome to submit it here on Blackboard or on your Github repository (5p).
+		
+	\bibliography{492}
+	\bibliographystyle{plain}
+
+\end{document}

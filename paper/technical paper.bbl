@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{kim14}
+Yoon Kim.
+\newblock Convolutional neural networks for sentence classification.
+\newblock In {\em Proceedings of the 2014 Conference on Empirical Methods in
+  Natural Language Processing ({EMNLP})}, pages 1746--1751, Doha, Qatar, oct
+  2014. Association for Computational Linguistics.
+
+\end{thebibliography}
