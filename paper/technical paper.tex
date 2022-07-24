@@ -1,7 +1,14 @@
 \documentclass[]{article}
 \usepackage[margin = 1.5cm]{geometry}
-\usepackage{relsize} %for subtitle thats smaller
-\newcommand{\comment}[1]{} %multi-line comments
+
+%smaller subtitle
+\usepackage{relsize} 
+
+%mutli line comments
+\newcommand{\comment}[1]{}
+
+%bibliography citations in order
+\usepackage[numbers,sort&compress]{natbib}
 
 %opening
 \title{Fake News? 
@@ -16,11 +23,13 @@
 		
 		%1.1. Introduction - state your goal and hypothesis, why it is original and why nobody solved it before (10p)
 		
-		The spread of misinformation may be one of the biggest problems facing humanity, exacerbated with the popularity of social media. Today, anyone can log into their computer and write something that the entire world can see. While the malicious spread of misinformation is  often seen in regards to politics, it's not exclusive to it. Though anyone with a computer can also access a search engine and, usually with relative ease, tell if a statement is false based on the results, it's rare that a person will take the time out of their day to do so, and as such may continue to spread the false statement.
+		The spread of misinformation may be one of the biggest societal problems, exacerbated by the popularity social media. Today, anyone can log into their computer and write something that the entire world can see. While the malicious spread of misinformation is  often seen in regards to politics, it's not exclusive to it. Though anyone with a computer can also access a search engine and, usually with relative ease, tell if a statement is false based on the results, it's rare that a person will take the time out of their day to do so, and as such may continue to spread the false statement.
 		
-		With a machine learning algorithm that takes a statement (ex. a blue whale can weigh up to 5,000 pounds) classifies the statement as either true or false, the user doesn't have to take any time to Google it on their own. With this easy-to-use feature implemented in websites such as Twitter, Facebook, or Reddit, misinformation will be easily clocked and therefore is unlikely to ``go viral" and spread to more users.
+		With a machine learning algorithm that takes a statement (ex. a blue whale can weigh up to 200 tons) and classifies the statement as either true or false, the user doesn't have to take any time to Google it on their own. With this easy-to-use feature implemented in websites such as Twitter, Facebook, or Reddit, misinformation will be easily clocked and therefore is unlikely to ``go viral" and spread to more users. 
 		
-		Though machine learning has been used for fact-checking and determining the credibility of a claim, most of its application has been in analyzing full-length articles using context clues and sources as to whether the information is credible or on individual statements that were trained on sentiment analysis to use common sense.
+		Though machine learning has been used before for fact-checking and determining the credibility of a claim, most of its application has been in analyzing either full-length articles using context clues and sources or on subjective statements that were trained on sentiment analysis to use common sense. Obtaining truth values of objective statements has not been previously attempted in the public sphere (i.e. outside of scientific claims \cite{wadden20} or as a part of a broader algorithm \cite{lazarski21}).
+		
+		 With this proposed model, the truth values of objective statements will be readily available to the masses who may have otherwise just taken whatever they read online at face value.
 		
 
 		\comment{
@@ -29,6 +38,7 @@
 			 Why is it hard? (E.g., why do naive approaches fail?)
 			 Why hasn't it been solved before? (Or, what's wrong with previous proposed solutions? How does mine differ?)
 			 What are the key components of my approach and results? Also include any specific limitations.
+			\bibliography{technical paper}
 			
 			question: is it possible to determine whether an individual statement (given no other context) is true or false with 80\% accuracy?
 			
@@ -47,11 +57,40 @@
 		
 		%1.2. Literature review - describe similar work that has been done, with references, and where that work failed short of answering your question (10p)
 		
-		fake news - pdf on desktop
-		- fake news can be described as any "news article that is intentionally and verifiably false." (introduction pg 18 ?)
-		- 
+		\comment{
+			fake news - pdf on desktop
+			- fake news can be described as any "news article that is intentionally and verifiably false." (introduction pg 18 ?)
+			-use cnn's with the text and source to determine credibility and see if the article as a whole is 'fake news'. if there were one false statement, the entire article would be classified as false and while this is good for someone who wants to know whether or not to trust an article, it's not if someone wants to know if a specific statement is true or false. If the answer is false, the statement may be true and simply share a page with a false statement, entirely separate from itself.
+			
+			
+			experience based 
+			- uses semantics and study of formal languages
+			- adaptive, must have memory and looks for answer  that is 'most consistent with its experience under the restriction of available resources'
+			-inheritance statements relates two concepts, for example bird and raven, and this model uses its experience to relate the terms. if the sentence said 'a raven is a bird' NARS, if given enough resources to connect the two terms, will set the truth value of this statement to true. this means that simple, common-sense statements can be found out with relative ease, but more complex statements that require specific knowledge and not just reasoning can not.
+			
+			cnns for sentence classification
+			-nlp used with statements that are not necessarily (though can be) claims, and instead of finding truth values will classify the statement according to its sentiment (whether a statement is good or bad, rating a review on a scale of positive to negative, or separating sentences by their subject matter)
+			-found that cnn's with just one layer of convolution 'perform remarkably well' for these purposes
+			
+			fact checking with nlp
+			-n-grams to group n amount of words
+			-neural networks
+			-statements must be verified as being a claim and not an opinion, joke, etc. which means another step in the process of fact checking. 
+			-'Inconveniently, even though research has gone into claim detection, there is no formal
+			definition of what a claim is yet.'
+			-claims can be compared using fact databases that have been pre-fact checked by professionals, the internet (if a fact database fails) using the snippet result of a google search and gives this to the user
+			-sources can be trusted also based on sentiment analysis. unassertive words might mean a false claim, as well as first and second person pronouns (I, me, you, yours) as opposed to third person pronouns (he, she, they), as well as exaggerated words instead of numbers.
+			-'regarding generalized fact checking, methods that utilize powerful search enginges on the internet perform best.' the challenge is getting fact checks on things that humans have not previously looked at and things that aren't already in fact-databases
+			
+			text understanding from scratch
+			-understanding the general meaning behind a sentence given using matching words and classification
+			-cnns
+			-doesnt require knowledge of syntax or words, uses context and an input alphabet for the language and then prepared into vectors (words). a dictionary doesnt need to be inputted beforehand
+			-similar as others, sentiment analysis (good/bad), subject categorizing - only 'for its semantic or sentiment[al] meaning.'
+			-
 		
-		\cite{kim14}
+		}
+		
 		
 		
 	
@@ -59,7 +98,16 @@
 	
 		%1.3. Add a link to the dataset/s you plan to work with (must be open source); if the dataset is not very big, you are also welcome to submit it here on Blackboard or on your Github repository (5p).
 		
+		\comment{
+			using trivia websites to get a training set (where they tell you if the statement is true or false) and then web scraping first page of google result snippets and putting them into a database together
+			
+			split up dataset into testing and training 
+			
+			list some examples of the trivia websites you're going to use as well as the google api package for python to get the snippets
+	
+		}
+		
 	\bibliography{492}
-	\bibliographystyle{plain}
+	\bibliographystyle{unsrtnat}
 
 \end{document}
