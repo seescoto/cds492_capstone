@@ -5,44 +5,46 @@ Reallocating 'name_of_file' (item size: 1) to 4 items.
 Reallocating 'name_of_file' (item size: 1) to 9 items.
 The style file: unsrtnat.bst
 Database file #1: 492.bib
-You've used 2 entries,
+Warning--empty year in k_api
+You've used 7 entries,
             2481 wiz_defined-function locations,
-            567 strings with 4875 characters,
-and the built_in function-call counts, 825 in all, are:
-= -- 58
-> -- 66
-< -- 0
-+ -- 24
-- -- 20
-* -- 73
-:= -- 151
-add.period$ -- 9
-call.type$ -- 2
-change.case$ -- 4
-chr.to.int$ -- 2
-cite$ -- 2
-duplicate$ -- 32
-empty$ -- 60
-format.name$ -- 22
-if$ -- 162
+            607 strings with 5854 characters,
+and the built_in function-call counts, 2673 in all, are:
+= -- 246
+> -- 117
+< -- 6
++ -- 48
+- -- 34
+* -- 186
+:= -- 434
+add.period$ -- 35
+call.type$ -- 7
+change.case$ -- 13
+chr.to.int$ -- 7
+cite$ -- 8
+duplicate$ -- 135
+empty$ -- 238
+format.name$ -- 45
+if$ -- 579
 int.to.chr$ -- 1
-int.to.str$ -- 3
-missing$ -- 1
-newline$ -- 21
-num.names$ -- 6
-pop$ -- 16
+int.to.str$ -- 8
+missing$ -- 6
+newline$ -- 55
+num.names$ -- 21
+pop$ -- 58
 preamble$ -- 1
-purify$ -- 2
+purify$ -- 7
 quote$ -- 0
-skip$ -- 23
+skip$ -- 90
 stack$ -- 0
-substring$ -- 4
-swap$ -- 4
-text.length$ -- 0
+substring$ -- 75
+swap$ -- 26
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 14
-warning$ -- 0
-while$ -- 4
+type$ -- 46
+warning$ -- 1
+while$ -- 18
 width$ -- 0
-write$ -- 38
+write$ -- 121
+(There was 1 warning)
