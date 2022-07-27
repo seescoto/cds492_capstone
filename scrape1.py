@@ -23,6 +23,7 @@ import pandas as pd
 import requests 
 from bs4 import BeautifulSoup
 
+'''
 url ="https://www.opinionstage.com/blog/true-or-false-questions/" 
 page = requests.get(url) 
 
@@ -33,3 +34,13 @@ soup = BeautifulSoup(page.content, 'html.parser')
 subset = soup.find(id = "post-30302") #part of html with the t/f qs 
 
 #print(subset.prettify())
+'''
+
+url = "https://www.flexiquiz.com/Help/inspiration/awesome-true-or-false-quiz-questions"
+page = requests.get(url) 
+
+soup = BeautifulSoup(page.content, 'html.parser')
+
+#text starts at <ol>, has some headings with style = list-style-type: none
+#then questions are <li> ::marker QUESTION <strong>T/F</strong>
+
