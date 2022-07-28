@@ -73,7 +73,8 @@ for i in range(len(questions)):
     
     questions[i] = strings[0].strip('-').strip() 
     #strip out hyphens and then trailing whitespaces
-    answers.append(strings[1][:-9]) #take out </strong> at end
+    answers.append(strings[1].strip().strip('<br/>').strip().strip("</strong>")) 
+    #take out <br/> and </strong> at end if there (plus spaces)
 
 #create main dataset, 
 #will add new ones to this at the end with main.append(df, ignore_index = True)                
