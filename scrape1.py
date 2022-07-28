@@ -36,6 +36,10 @@ subset = soup.find(id = "post-30302") #part of html with the t/f qs
 #print(subset.prettify())
 '''
 
+'''
+100 t/f questions from flexiquiz.com
+'''
+
 url = "https://www.flexiquiz.com/Help/inspiration/awesome-true-or-false-quiz-questions"
 page = requests.get(url) 
 
@@ -44,3 +48,46 @@ soup = BeautifulSoup(page.content, 'html.parser')
 #text starts at <ol>, has some headings with style = list-style-type: none
 #then questions are <li> ::marker QUESTION <strong>T/F</strong>
 
+blog = soup.find('ol') 
+qs = blog.find_all('li')
+
+#take out ones that go <li style= "list-style-type: none">
+#those are just titles
+questions = []
+answers = []
+for q in qs:
+    q = str(q)
+    if "li style=" not in q:
+        questions.append(q)
+        
+#process, split into q and a, string formatting 
+for i in range(len(questions)):
+    #take out <li></li> from beginning and end 
+    questions[i] = questions[i][4:-5]
+    
+    #split into questions and answers 
+    #format is: question - <strong>answer</strong>
+    strings = questions[i].split(' <strong>')
+    
+    #now string[0] = question -, string[1] = answer</strong>
+    
+    questions[i] = strings[0].strip('-').strip() 
+    #strip out hyphens and then trailing whitespaces
+    answers.append(strings[1][:-9]) #take out </strong> at end
+
+#create main dataset, 
+#will add new ones to this at the end with main.append(df, ignore_index = True)                
+main = pd.DataFrame(list(zip(questions, answers)), columns = ['question', 'truthValue'])
+
+
+
+
+
+
+
+
+
+
+
+
+   
