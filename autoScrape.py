@@ -4,7 +4,9 @@ Created on Thu Jul 28 15:36:10 2022
 
 @author: seesc
 
-automate scraping and splitting q and a's
+automate scraping and splitting q and a'
+not sure if possible since each website is formatted very differently 
+will see if possible
 """
 
 
