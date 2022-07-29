@@ -107,10 +107,13 @@ for i in range(len(qs)):
     
     #answers are in format "Answer: TRUTHVALUE - EXPLANATION" 
     #only want truth value
-    answers[i] = answers[i].split('-')[0] #just Answer: TRUTHVALUE
+    answers[i] = answers[i].split('-', 1)[0] #just Answer: TRUTHVALUE
     answers[i] = answers[i].split('Answer:')[1] #just TRUTHVALUE
     answers[i] = answers[i].strip()
 
+    #ISSUE!!! if two dashes in answer, second one used. not sure why bc/ split
+    #should fix that by putting 1 as an arg
+    #will fix when its not 5am 
 
 #create second dataset
 df = pd.DataFrame(list(zip(questions, answers)), columns = ['question', 'truthValue'])
