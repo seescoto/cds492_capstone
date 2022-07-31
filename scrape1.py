@@ -108,8 +108,7 @@ for i in range(len(qs)):
     #answers are in format "Answer: TRUTHVALUE - EXPLANATION" 
     #only want truth value
     answers[i] = answers[i].split('-', 1)[0] #just Answer: TRUTHVALUE
-    answers[i] = answers[i].split('Answer:')[1] #just TRUTHVALUE
-    answers[i] = answers[i].strip()
+    answers[i] = answers[i].split('Answer:')[1].strip() #just TRUTHVALUE
 
     #ISSUE!!! if two dashes in answer, second one used. not sure why bc/ split
     #should fix that by putting 1 as an arg

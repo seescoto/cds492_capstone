@@ -1,201 +1,372 @@
-,question,truthValue
-0,Roz in Frasier was originally going to be played by Lisa Kudrow,True
-1,"Neighbours is filmed in Sydney, Australia",False
-2,The Clampett Family struck oil near their home in the Ozarks before moving to Beverly Hills in the 1960's,True
-3,The Downton Abbey series starts the day after the sinking of the Titanic,True
-4,Benedict Cumberbatch portrays Sherlock in the US TV show called Elementary,False
-5,"In Friends, Monica's grandmother used to live in Joey's apartment",False
-6,The Japanese anime Sazae-San has the Guinness World Record for the longest-running animated show on television,True
-7,Jason Momoa portrays Khal Drogo in 'Game of Thrones',True
-8,Milhouse Van Houten is Bart Simpson's best friend,True
-9,Filming for the Netflix show 'Money Heist' took place at the actual Royal Mint of Spain in Madrid,False
-10,"Gisborne, New Zealand was the first city in the world to see in the millennium",True
-11,You had a rely on a clock radio as Google Assistant do not exist,True
-12,Sega Dreamcast was released in the 2000's,False
-13,The iPod touch had cellphone capabilities,False
-14,Kelly Clarkson won the first season of American Idol,True
-15,YouTube launched,True
-16,Furbies were a popular toy introduced in the noughties,False
-17,Angela Merkel became the first woman to be Chancellor of Germany,True
-18,Avatar was the highest-grossing movie of the decade,True
-19,Bennifer costarred together in the movie called Gigli,True
-20,A group of crocodiles are called shrewdness,False
-21,Dogs can understand up to 250 hand gestures,True
-22,A hair of a polar bear's fur is white,False
-23,The Indian elephant is larger than the African elephant,False
-24,A snail can sleep for up to 3 months,False
-25,Apes cannot laugh,False
-26,Penguins cant be found on the continent of Africa,False
-27,The Amazon River has native dolphins,True
-28,A slug has four noses,True
-29,A Peregrine Falcon is the fastest bird in the world,True
-30,The granny smith apple originates from Australia,True
-31,"Limes float, lemons sink",False
-32,Bananas are available in colors other than yellow,True
-33,A Waldorf Salad must have 10 walnuts to be a true Waldorf salad,False
-34,The USA grows the most maize,True
-35,Strawberries are not actually berries,True
-36,Bananas grow upside down,True
-37,The first tea bags were made from linen,False
-38,Mushrooms need sunlight to grow,False
-39,M&amp;M stands for Mars and Murrie,True
-40,Walt Disney holds the record for the most Oscars,True
-41,Cinderella was the first Disney princess,False
-42,The Titanic ship cost more to build than the move cost to make,False
-43,"Only one film has ever won all five of the main Oscars (film, actor, actress, screenplay, and director)",False
-44,Sean Connery wore a toupee in every James Bond movie,True
-45,Scientists use mosquito DNA to create dinosaurs in 'Jurassic Park',True
-46,'La La Land' was Ryan Gosling and Emma Stone's third movie together,True
-47,'The Birds' (1963) was directed by American film director Steven Speilberg,False
-48,"10,297 balloons were used in the floating sequences for the movie 'Up!'",True
-49,The snow in the 'Wizard of Oz' is real,False
-50,The unicorn is the national animal of Scotland,True
-51,Vietnamese is an official language in Canada,False
-52,New York has the nickname the Big Pear,False
-53,Macchu Pichu is an earthquake-proof city,True
-54,The bridge over the River Kwai is in Thailand,True
-55,"There's a village in the Netherlands with no streets, only canals",True
-56,Canada has the most lakes in the world,True
-57,"The world's oldest country San Marino, is in South America",False
-58,Monaco is the smallest country in the world,False
-59,Sydney is the capital of Australia,False
-60,The Japanese car company Toyota was originally established as a textiles manufacturer,True
-61,The first speeding ticket was in 1896 for driving at 8MPH,True
-62,Henry Ford designed what was considered to be the world's first car,False
-63,The Volkswagen Beetle sold over 52 million models between 1937 and 2003,False
-64,Porsche 718 Cayman is front-engined,False
-65,The Tesla Roadster was the first car to be launched to space,True
-66,A bull features on the Porsche logo,False
-67,The BMW 1600 was the first car to come equipped with anti-lock brakes,False
-68,In the classic TV series 'Starsky and Hutch' the two cops drove a Ford Gran Torino,True
-69,"The Ford Mustang is considered to be the first ""pony car""",True
-70,Madonna's real name is Madonna,True
-71,Dolly Parton is the godmother of Miley Cyrus,True
-72,The first-ever video played on MTV in 1981 was 'Video Killed the Radio Star',True
-73,Justin Bieber has a fear of grapes and specifies that each venue he plays in must be grape free before he enters the building,False
-74,"The Beatles were Ringo, Paul, George, and James",False
-75,Last Christmas by Wham reached number one in the UK during the 1984 festive season,False
-76,In the 1980's Michael Jackson and his brothers had a top ten hit featuring Rolling Stones frontman Mick Jagger,True
-77,Rapper Vanilla Ice's real name is Robert Van Winkle,True
-78,Harry Styles middle name is Edward,True
-79,Taylor Swift's first job was on a Christmas Tree farm,True
-80,There are five Oceans in the world,True
-81,The world's Oceans produce over 40% of the oxygen we breath,True
-82,Over 90% of sea turtles in the Ocean are found to have consumed plastic,True
-83,The USA borders three Oceans,True
-84,The southernmost Ocean is called The Antarctic Ocean,False
-85,The Pacific is the deepest Ocean,True
-86,The life expectancy of a jellyfish is 70 years,False
-87,The longest mountain range in the world is under the sea,True
-88,More than 70% of the countries in Africa border the sea,True
-89,The Pacific Ocean is bigger than the moon,True
-90,"If you add the two numbers on the opposite sides of a dice together, the answer is always 7",True
-91,You can sneeze during sleep,False
-92,Lightning never hits the same place twice,False
-93,The first football in the world was manufactured from a pig's bladder,True
-94,"In Japan, people see a ""rabbit on the moon"" instead of a ""man on the moon""",True
-95,Human teeth are as strong as the teeth of a mature shark,True
-96,The Channel Tunnel between Britain and France is the longest rail tunnel in the world,False
-97,John Adams was the third president of the USA,False
-98,The USA's southernmost state is Texas,False
-99,"Someone from the USA consumed over 26,000 Big Macs after eating one a day for forty years",True
-100,Sharks are mammals,False
-101,Sea otters have a favorite rock they use to break open food,True
-102,The blue whale is the biggest animal to have ever lived,True
-103,The hummingbird egg is the world's smallest bird egg,True
-104,Pigs roll in the mud because they don’t like being clean,False
-105,Bats are blind,False
-106,A dog sweats by panting its tongue,False
-107,It takes a sloth two weeks to digest a meal,True
-108,The largest living frog is the Goliath frog of West Africa,True
-109,"An ant can lift 1,000 times its body weight",False
-110,"When exiting a cave, bats always go in the direction of the wind",False
-111,Galapagos tortoises sleep up to 16 hours a day,True
-112,An octopus has seven hearts,False
-113,The goat is the national animal of Scotland,False
-114,Carnivores are animal eaters,False
-115,A monkey was the first non-human to go into space,False
-116,New York City is composed of between 36 and 42 islands,True
-117,South Africa has one capital,False
-118,The Atlantic Ocean is the biggest ocean on Earth,False
-119,Mount Everest is the tallest mountain in the world,True
-120,You can find the ‘Desert of Death’ in California,False – you will have to travel to Dasht
-121,"The total length of the Great Wall of China adds up to 13,171 miles",True
-122,The two longest rivers in the world are the Mississippi and the Nile,False
-123,The Chunnel between England and France is 31.5 miles long,True
-124,Greenland is the largest island in the world,True
-125,There are more countries in South America than Africa,False
-126,Alaska has the most active volcanoes of any state in the United States,True
-127,China has the longest coastline in the world,False
-128,Vatican City is the smallest country in the world,True
-129,Venezuela is home to the world’s highest waterfall,True
-130,The human body has four lungs,False
-131,Human skin regenerates every week,False
-132,The average human sneeze can be clocked at 100 miles an hour,True
-133,Humans lose an average of 75 strands of hair a month,False
-134,Infants have more bones than adults,True
-135,The heart is the largest internal organ in the body,False
-136,Most of the human brain is made of muscle,False
-137,Taste buds can only be found on the tongue,False
-138,The human eye can distinguish 10 million different colors,True
-139,Humans lose more than 80% of heat from their feet,False
-140,The human body is about 60% water,True
-141,The most common blood type is 0- negative,True – and AB
-142,Aladdin's character was based on Brad Pitt,False
-143,The song “We Don’t Talk About Bruno” from Encanto is the first Disney song to hit #1 on the Billboard Hot 100 chart in 29 years,True
-144,"It took eight months from start to finish to produce the 1959 Disney film, Sleeping Beauty",False
-145,"Pinocchio was the first animated, full-color Walt Disney feature film",False
-146,Toy Story was Pixar’s first movie,True
-147,Minnie Mouse’s full name is Wilhelmina Mouse,False – her real name is Minerva Mouse.
-148,Dumbo is the shortest Disney film,True
-149,The Aristocats was the first film to be made after Walt Disney’s death,True
-150,Prince Eric and Ariel from The Little Mermaid have a daughter named Princess Song,False
-151,Beauty and the Beast was Disney’s first Broadway musical,True
-152,Pepperoni is the most popular pizza topping in the US,True
-153,Cheesecake comes from Italy,False
-154,Pineapples grow on trees,False
-155,A potato was the first vegetable to be planted on the space shuttle,True
-156,Hawaiian pizza comes from Canada,True
-157,French fries originated from France,False
-158,Pizza was the first food consumed in space,False
-159,Caesar Salad originates from Italy,False
-160,Ears of corn have an even number of rows,True
-161,"The names of the mascots for Rice Krispies are Snap, Crackle, & Pop",True
-162,Vanilla is the world’s most expensive spice,False
-163,Mcdonald's has the most restaurants by location in the United States,False
-164,The Chinese New Year is celebrated on the same day every year,False
-165,Punxsutawney Phil is just a nickname for the famous groundhog,True
-166,The first St. Patrick’s Day parade in the United States was held in New York City,False
-167,The tradition of dyeing Easter eggs started in the United States,False
-168,"Only two men signed the Declaration of Independence on July 4, 1776",True
-169,The U.S. and Canada celebrate Thanksgiving on the same day,False
-170,Santa Claus has his own postal code,True
-171,There are seven nights in Kwanzaa,True
-172,Memorial Day has a special set of instructions regarding raising and lowering the U.S. flag,True
-173,Polo takes up the largest amount of space in terms of land area,True
-174,Every golf ball has the same number of dimples,False
-175,Football players started wearing helmets in 1943,True
-176,Brazil is the only nation to have played in every World Cup finals tournament,True
-177,World-renowned jeweler Tiffany & Co. is the maker of the Vince Lombardi trophy,True
-178,There are 30 NFL teams,False
-179,The New York Marathon is the largest in the world,True
-180,Three strikes in a row in bowling is called a chicken,False
-181,An astronaut has played golf on the moon,True
-182,The Tour de France always finishes in Italy,False
-183,Soccer (football) is estimated to have more than 2 billion fans around the world,False – Soccer is the world’s most popular sport with an estimated 4 billion fans worldwide. More than half the world’s population tunes in to watch the World Cup every four years.
-184,President George Washington brought macaroni and cheese to the USA,False
-185,Marvel published its first comic in October 1939,True
-186,The letter “T” is the most common in the English Language,False
-187,People who have chiclephobia are afraid of cats,False
-188,John Glenn became the oldest astronaut when he traveled to space at the age of 53,False
-189,All the kings in a standard deck of cards have a mustache,False
-190,Pepsi was the first soft drink to be enjoyed in outer space,False
-191,The name of Batman’s butler is Albert,False
-192,Fortune cookies were invented in China,False
-193,Henry VIII had eight wives,False
-194,The maximum length for a video posted on TikTok is 45 seconds,False
-195,The letter “J” is the only letter in the alphabet not included in the periodic table,True
-196,Every country in the world has a rectangular flag,False
-197,"The Harry Potter film, Chamber of Secrets, is the longest film of the Harry Potter movies",True
-198,The official color of the Golden Gate Bridge in California is “Tennessee Orange.”,False
-199,Dr. Pepper is the oldest soft drink in America,True
+,question,truthValue,Unnamed: 0
+0,Do camels have three sets of eyelids?,True,
+1,It is possible to sneeze while sleeping,False,
+2,Australia is a country as well as a continent,True,
+3,Herbivore animals consume meat,False,
+4,The cell nucleus was discovered by Robert Brown,True,
+5,The national flag of America has 51 stars,True,
+6,Pneumonia is an infection that affects lungs,True,
+7,The capital of Spain is Madrid,True,
+8,Ears are responsible for smelling,False,
+9,The color of cherries is red,True,
+10,Butterflies are not birds,True,
+11,The capital of France is Washington DC,False,
+12,There are four lungs found in the human body,False,
+13,The human body consists of 150 bones,False,
+14,Jupiter is the smallest planet in the solar system,False,
+15,Mt. Everest is the highest mountain in the world,True,
+16,Seeds of cotton get dispersed by water,False,
+17,Molecule is the smallest unit of matter,False,
+18,The Sahara desert is the biggest desert in the world,True,
+19,A group of monkeys is called a herd,False,
+20,A century consists of one hundred years,True,
+21,Chlorophyll is responsible for green color in plants.,True,
+22,Crocodiles shed tears when they eat food,True,
+23,The US shares borders with three countries,False,
+24,The tallest building in the world is Burj Khalifa.,True,
+25,French is the official language of Spain,False,
+26,Evergreen forests are mostly found in hilly regions,False,
+27,The Nile is not the longest river in the world,False,
+28,Elephants are the largest animals in the world,True,
+29,The capital of Australia is Sydney,True,
+30,Sharks are mammals,False,
+31,The closest planet to the sun is Venus,False,
+32,The unit of measurement for temperature is Kelvin,True,
+33,China is the largest country in the world.,False,
+34,Asia is the largest continent in the world.,True,
+35,There is no railway system in Iceland,True,
+36,Oxygen is required for breathing,True,
+37,The human heart is equivalent to the size of a fist,True,
+38,Eyes are responsible for sight,True,
+39,There are seven colors in the rainbow,True,
+40,World War II started in 1945,False,
+41,The national game of England is Cricket,True,
+42,Leopard is the fastest animal in the world,True,
+43,Omnivores eat only plants,False,
+44,The largest bone in the human body is the thigh bone.,True,
+45,Sloth takes two weeks to digest food,True,
+46,A group of jellyfish is called a smack,True,
+47,The horn of rhinoceros is made of hair,True,
+48,Archimedes is considered to be the father of history,False,
+49,Taiwan celebrates festivals to appreciate monkeys,False,
+50,Adult humans have 32 teeth,True,
+51,The Olympics are held every 3 years,False,
+52,"There are six apples in the box. If I take two apples from the box, then two apples are remaining in the box.",False,
+53,"The alphabest A, I, E,O,U are called consonants.",False,
+54,There are 365 days in a year,True,
+55,Chameleons can change the color of their body.,True,
+56,There are seven days in a week,True,
+57,There are 29 alphabets in the English language,False,
+58,There are 5 sides in a triangle,False,
+59,The offspring of frogs is called Tadpole,True,
+60,The largest mammal in the world is the blue whale,True,
+61,Skin is the largest organ in the human body,True,
+62,There are 7 continents in the world.,True,
+63,The Amazon is the densest forest in the world.,False,
+64,Camel is known as the “Ship of the Desert”,True,
+65,The sun rises from the East and sets in the West,True,
+66,Butterflies do not have colorful wings.,False,
+67,The national game of the USA is Baseball.,True,
+68,Lizards are reptiles.,True,
+69,Cheetah is the fastest animal in the world,True,
+70,There are 8 planets in the solar system,True,
+71,The Eiffel tower is located in Paris,True,
+72,There are five players on a baseball team,False,
+73,The Great Pyramid of Gaza is the largest pyramid in the world,True,
+74,Spiders have five legs,False,
+75,The color of the stars on the American flag is white,True,
+76,California is a famous state in the USA.,True,
+77,Due to gravity things fall when you drop them,True,
+78,Giraffes are the tallest animal in the world,True,
+79,Rhode Island is the largest state in the world.,False,
+80,Lava is the molten rock from the volcanic eruptions.,True,
+81,Pluto is the pet dog of Mickey Mouse,True,
+82,Diamond is the hardest natural substance in the world.,True,
+83,Strawberry is the national fruit of New Zealand,False,
+84,Baseball is the national sport of Japan,False,
+85,The Titanic sank in 1912,True,
+86,Chihuahuas are the smallest breed of dog,True,
+87,Neil Amstrong was the first person to step on the moon,True,
+88,There are 8 sides in the octagon,True,
+89,The Statue of Liberty is located in Texas,False,
+90,Kangaroos are the national animal of Australia.,True,
+91,The German shepherd is a breed of cat.,False,
+92,Sleeping beauty is the Disney character who slept for 100 years.,True,
+93,The onset of spring season is after summer.,False,
+94,There are 18 hours in a day,False,
+95,George Washington was the third president of the United States,False,
+96,Equator is the line that passes through the middle of the earth.,True,
+97,Parrot is the bird that can mimic human speech,True,
+98,Ears and noses continue to grow throughout life,True,
+99,Snow White lived with seven dwarfs.,True,
+100,The atomic number for lithium is 17,False,
+101,A cross between a horse and a zebra is called a 'Hobra',False,
+102,The black box in a plane is black,False,
+103,Alliumphobia is a fear of garlic,True,
+104,"Sex Education star Gillian Anderson was born in Chicago, Illinois",True,
+105,Prince Harry is taller than Prince William,False,
+106,The star sign Aquarius is represented by a tiger,True,
+107,Meryl Streep has won two Academy Awards,False,
+108,Marrakesh is the capital of Morocco,False,
+109,Idina Menzel sings 'let it go' 20 times in 'Let It Go' from Frozen,False,
+110,Waterloo has the greatest number of tube platforms in London,True,
+111,M&M stands for Mars and Moordale,False,
+112,Gin is typically included in a Long Island Iced Tea,True,
+113,The unicorn is the national animal of Scotland,True,
+114,There are two parts of the body that can't heal themselves,False,
+115,Howard Donald is the oldest member of Take That,True,
+116,The Great Wall of China is longer than the distance between London and Beijing,True,
+117,There are 219 episodes of Friends,False,
+118,'A' is the most common letter used in the English language,False,
+119,A lion's roar can be heard up to eight kilometres away,True,
+120,"In Harry Potter, Draco Malfoy has no siblings",False,
+121,Louis Walsh is older than Simon Cowell,True,
+122,Monaco is the smallest country in the world,False,
+123,'What Do You Mean' was Justin Bieber's first UK number one single,True,
+124,The river Seine in Paris is longer than the river Thames in London,True,
+125,A cara cara navel is a type of orange,True,
+126,There are five different blood groups,False,
+127,Cinderella was the first Disney princess,False,
+128,ASOS stands for As Seen On Screen,True,
+129,The Battle Of Hastings took place in 1066,True,
+130,H&M stands for Hennes & Mauritz,True,
+131,Canis lupur is the scientific name for a wolf,False,
+132,K is worth four points in Scrabble,False,
+133,Alaska is the biggest American state in square miles,True,
+134,Ariana Grande is 25 or under,False,
+135,Australia is wider than the moon,True,
+136,Queen Elizabeth II is currently the second longest reigning British monarch,False,
+137,Madonna's real name is Madonna,True,
+138,Serena Williams has one more singles tennis Grand Slam titles than sister Venus,True,
+139,Alexander Fleming discovered penicillin,True,
+140,Harry Styles' middle name is Edward,True,
+141,Your 'radius' bone is in your leg,False,
+142,Coffee is made from berries,True,
+143,Drag Race's Michelle Visage is older than RuPaul,False,
+144,The only letter not in the periodic table is the letter J,True,
+145,Jordan North won I'm A Celebrity... Get Me Out Of Here! in 2020,False,
+146,The small intestine is about three-and-a-half times the length of your body,True,
+147,An octopus has three hearts,True,
+148,Thomas Edison discovered gravity,False,
+149,Walt Disney holds the record for the most Oscars,True,
+150,Spaghetto is the singular word for a piece of spaghetti,True,
+151,Venus is the hottest planet in the solar system,True,
+152,Hillary Clinton and Celine Dion are related,False,
+153,Cardi B's real name is Cardigan Backyardigan,False,
+154,Bananas are curved because they grow upwards towards the sun,True! A process called 'negative geotropism' means the fruit grows upwards to break through the canopy.,
+155,The five rings on the Olympic flag are interlocking,True,
+156,Fish cannot blink,True,
+157,Friends star Lisa Kudrow was originally cast in Frasier,True,
+158,Goldfish have a two second memory,False,
+159,50 Cent and Charlie Chaplin were alive at the same time,True,
+160,There are 14 bones in a human foot,False,
+161,Hot and cold water sound the same when poured,False,
+162,There have been seven million pound winners on Who Wants to Be a Millionaire,False,
+163,Meghan Markle's first name is Rachel,True,
+164,In Finding Nemo the protagonist is a pufferfish,False,
+165,"In a deck of cards, the king has a mustache",False,
+166,When the two numbers on opposite sides of a dice are added together it always equals 7,True,
+167,In the English language there is no word that rhymes with orange,True,
+168,Hippos sweat a red substance,True,
+169,Sex and the City star Kim Cattrall is from California,False,
+170,,,
+171,Roz in Frasier was originally going to be played by Lisa Kudrow,True,0.0
+172,"Neighbours is filmed in Sydney, Australia",False,1.0
+173,The Clampett Family struck oil near their home in the Ozarks before moving to Beverly Hills in the 1960's,True,2.0
+174,The Downton Abbey series starts the day after the sinking of the Titanic,True,3.0
+175,Benedict Cumberbatch portrays Sherlock in the US TV show called Elementary,False,4.0
+176,"In Friends, Monica's grandmother used to live in Joey's apartment",False,5.0
+177,The Japanese anime Sazae-San has the Guinness World Record for the longest-running animated show on television,True,6.0
+178,Jason Momoa portrays Khal Drogo in 'Game of Thrones',True,7.0
+179,Milhouse Van Houten is Bart Simpson's best friend,True,8.0
+180,Filming for the Netflix show 'Money Heist' took place at the actual Royal Mint of Spain in Madrid,False,9.0
+181,"Gisborne, New Zealand was the first city in the world to see in the millennium",True,10.0
+182,You had a rely on a clock radio as Google Assistant do not exist,True,11.0
+183,Sega Dreamcast was released in the 2000's,False,12.0
+184,The iPod touch had cellphone capabilities,False,13.0
+185,Kelly Clarkson won the first season of American Idol,True,14.0
+186,YouTube launched,True,15.0
+187,Furbies were a popular toy introduced in the noughties,False,16.0
+188,Angela Merkel became the first woman to be Chancellor of Germany,True,17.0
+189,Avatar was the highest-grossing movie of the decade,True,18.0
+190,Bennifer costarred together in the movie called Gigli,True,19.0
+191,A group of crocodiles are called shrewdness,False,20.0
+192,Dogs can understand up to 250 hand gestures,True,21.0
+193,A hair of a polar bear's fur is white,False,22.0
+194,The Indian elephant is larger than the African elephant,False,23.0
+195,A snail can sleep for up to 3 months,False,24.0
+196,Apes cannot laugh,False,25.0
+197,Penguins cant be found on the continent of Africa,False,26.0
+198,The Amazon River has native dolphins,True,27.0
+199,A slug has four noses,True,28.0
+200,A Peregrine Falcon is the fastest bird in the world,True,29.0
+201,The granny smith apple originates from Australia,True,30.0
+202,"Limes float, lemons sink",False,31.0
+203,Bananas are available in colors other than yellow,True,32.0
+204,A Waldorf Salad must have 10 walnuts to be a true Waldorf salad,False,33.0
+205,The USA grows the most maize,True,34.0
+206,Strawberries are not actually berries,True,35.0
+207,Bananas grow upside down,True,36.0
+208,The first tea bags were made from linen,False,37.0
+209,Mushrooms need sunlight to grow,False,38.0
+210,M&amp;M stands for Mars and Murrie,True,39.0
+211,Walt Disney holds the record for the most Oscars,True,40.0
+212,Cinderella was the first Disney princess,False,41.0
+213,The Titanic ship cost more to build than the move cost to make,False,42.0
+214,"Only one film has ever won all five of the main Oscars (film, actor, actress, screenplay, and director)",False,43.0
+215,Sean Connery wore a toupee in every James Bond movie,True,44.0
+216,Scientists use mosquito DNA to create dinosaurs in 'Jurassic Park',True,45.0
+217,'La La Land' was Ryan Gosling and Emma Stone's third movie together,True,46.0
+218,'The Birds' (1963) was directed by American film director Steven Speilberg,False,47.0
+219,"10,297 balloons were used in the floating sequences for the movie 'Up!'",True,48.0
+220,The snow in the 'Wizard of Oz' is real,False,49.0
+221,The unicorn is the national animal of Scotland,True,50.0
+222,Vietnamese is an official language in Canada,False,51.0
+223,New York has the nickname the Big Pear,False,52.0
+224,Macchu Pichu is an earthquake-proof city,True,53.0
+225,The bridge over the River Kwai is in Thailand,True,54.0
+226,"There's a village in the Netherlands with no streets, only canals",True,55.0
+227,Canada has the most lakes in the world,True,56.0
+228,"The world's oldest country San Marino, is in South America",False,57.0
+229,Monaco is the smallest country in the world,False,58.0
+230,Sydney is the capital of Australia,False,59.0
+231,The Japanese car company Toyota was originally established as a textiles manufacturer,True,60.0
+232,The first speeding ticket was in 1896 for driving at 8MPH,True,61.0
+233,Henry Ford designed what was considered to be the world's first car,False,62.0
+234,The Volkswagen Beetle sold over 52 million models between 1937 and 2003,False,63.0
+235,Porsche 718 Cayman is front-engined,False,64.0
+236,The Tesla Roadster was the first car to be launched to space,True,65.0
+237,A bull features on the Porsche logo,False,66.0
+238,The BMW 1600 was the first car to come equipped with anti-lock brakes,False,67.0
+239,In the classic TV series 'Starsky and Hutch' the two cops drove a Ford Gran Torino,True,68.0
+240,"The Ford Mustang is considered to be the first ""pony car""",True,69.0
+241,Madonna's real name is Madonna,True,70.0
+242,Dolly Parton is the godmother of Miley Cyrus,True,71.0
+243,The first-ever video played on MTV in 1981 was 'Video Killed the Radio Star',True,72.0
+244,Justin Bieber has a fear of grapes and specifies that each venue he plays in must be grape free before he enters the building,False,73.0
+245,"The Beatles were Ringo, Paul, George, and James",False,74.0
+246,Last Christmas by Wham reached number one in the UK during the 1984 festive season,False,75.0
+247,In the 1980's Michael Jackson and his brothers had a top ten hit featuring Rolling Stones frontman Mick Jagger,True,76.0
+248,Rapper Vanilla Ice's real name is Robert Van Winkle,True,77.0
+249,Harry Styles middle name is Edward,True,78.0
+250,Taylor Swift's first job was on a Christmas Tree farm,True,79.0
+251,There are five Oceans in the world,True,80.0
+252,The world's Oceans produce over 40% of the oxygen we breath,True,81.0
+253,Over 90% of sea turtles in the Ocean are found to have consumed plastic,True,82.0
+254,The USA borders three Oceans,True,83.0
+255,The southernmost Ocean is called The Antarctic Ocean,False,84.0
+256,The Pacific is the deepest Ocean,True,85.0
+257,The life expectancy of a jellyfish is 70 years,False,86.0
+258,The longest mountain range in the world is under the sea,True,87.0
+259,More than 70% of the countries in Africa border the sea,True,88.0
+260,The Pacific Ocean is bigger than the moon,True,89.0
+261,"If you add the two numbers on the opposite sides of a dice together, the answer is always 7",True,90.0
+262,You can sneeze during sleep,False,91.0
+263,Lightning never hits the same place twice,False,92.0
+264,The first football in the world was manufactured from a pig's bladder,True,93.0
+265,"In Japan, people see a ""rabbit on the moon"" instead of a ""man on the moon""",True,94.0
+266,Human teeth are as strong as the teeth of a mature shark,True,95.0
+267,The Channel Tunnel between Britain and France is the longest rail tunnel in the world,False,96.0
+268,John Adams was the third president of the USA,False,97.0
+269,The USA's southernmost state is Texas,False,98.0
+270,"Someone from the USA consumed over 26,000 Big Macs after eating one a day for forty years",True,99.0
+271,Sharks are mammals,False,100.0
+272,Sea otters have a favorite rock they use to break open food,True,101.0
+273,The blue whale is the biggest animal to have ever lived,True,102.0
+274,The hummingbird egg is the world's smallest bird egg,True,103.0
+275,Pigs roll in the mud because they don’t like being clean,False,104.0
+276,Bats are blind,False,105.0
+277,A dog sweats by panting its tongue,False,106.0
+278,It takes a sloth two weeks to digest a meal,True,107.0
+279,The largest living frog is the Goliath frog of West Africa,True,108.0
+280,"An ant can lift 1,000 times its body weight",False,109.0
+281,"When exiting a cave, bats always go in the direction of the wind",False,110.0
+282,Galapagos tortoises sleep up to 16 hours a day,True,111.0
+283,An octopus has seven hearts,False,112.0
+284,The goat is the national animal of Scotland,False,113.0
+285,Carnivores are animal eaters,False,114.0
+286,A monkey was the first non-human to go into space,False,115.0
+287,New York City is composed of between 36 and 42 islands,True,116.0
+288,South Africa has one capital,False,117.0
+289,The Atlantic Ocean is the biggest ocean on Earth,False,118.0
+290,Mount Everest is the tallest mountain in the world,True,119.0
+291,You can find the ‘Desert of Death’ in California,False – you will have to travel to Dasht,120.0
+292,"The total length of the Great Wall of China adds up to 13,171 miles",True,121.0
+293,The two longest rivers in the world are the Mississippi and the Nile,False,122.0
+294,The Chunnel between England and France is 31.5 miles long,True,123.0
+295,Greenland is the largest island in the world,True,124.0
+296,There are more countries in South America than Africa,False,125.0
+297,Alaska has the most active volcanoes of any state in the United States,True,126.0
+298,China has the longest coastline in the world,False,127.0
+299,Vatican City is the smallest country in the world,True,128.0
+300,Venezuela is home to the world’s highest waterfall,True,129.0
+301,The human body has four lungs,False,130.0
+302,Human skin regenerates every week,False,131.0
+303,The average human sneeze can be clocked at 100 miles an hour,True,132.0
+304,Humans lose an average of 75 strands of hair a month,False,133.0
+305,Infants have more bones than adults,True,134.0
+306,The heart is the largest internal organ in the body,False,135.0
+307,Most of the human brain is made of muscle,False,136.0
+308,Taste buds can only be found on the tongue,False,137.0
+309,The human eye can distinguish 10 million different colors,True,138.0
+310,Humans lose more than 80% of heat from their feet,False,139.0
+311,The human body is about 60% water,True,140.0
+312,The most common blood type is 0- negative,True – and AB,141.0
+313,Aladdin's character was based on Brad Pitt,False,142.0
+314,The song “We Don’t Talk About Bruno” from Encanto is the first Disney song to hit #1 on the Billboard Hot 100 chart in 29 years,True,143.0
+315,"It took eight months from start to finish to produce the 1959 Disney film, Sleeping Beauty",False,144.0
+316,"Pinocchio was the first animated, full-color Walt Disney feature film",False,145.0
+317,Toy Story was Pixar’s first movie,True,146.0
+318,Minnie Mouse’s full name is Wilhelmina Mouse,False – her real name is Minerva Mouse.,147.0
+319,Dumbo is the shortest Disney film,True,148.0
+320,The Aristocats was the first film to be made after Walt Disney’s death,True,149.0
+321,Prince Eric and Ariel from The Little Mermaid have a daughter named Princess Song,False,150.0
+322,Beauty and the Beast was Disney’s first Broadway musical,True,151.0
+323,Pepperoni is the most popular pizza topping in the US,True,152.0
+324,Cheesecake comes from Italy,False,153.0
+325,Pineapples grow on trees,False,154.0
+326,A potato was the first vegetable to be planted on the space shuttle,True,155.0
+327,Hawaiian pizza comes from Canada,True,156.0
+328,French fries originated from France,False,157.0
+329,Pizza was the first food consumed in space,False,158.0
+330,Caesar Salad originates from Italy,False,159.0
+331,Ears of corn have an even number of rows,True,160.0
+332,"The names of the mascots for Rice Krispies are Snap, Crackle, & Pop",True,161.0
+333,Vanilla is the world’s most expensive spice,False,162.0
+334,Mcdonald's has the most restaurants by location in the United States,False,163.0
+335,The Chinese New Year is celebrated on the same day every year,False,164.0
+336,Punxsutawney Phil is just a nickname for the famous groundhog,True,165.0
+337,The first St. Patrick’s Day parade in the United States was held in New York City,False,166.0
+338,The tradition of dyeing Easter eggs started in the United States,False,167.0
+339,"Only two men signed the Declaration of Independence on July 4, 1776",True,168.0
+340,The U.S. and Canada celebrate Thanksgiving on the same day,False,169.0
+341,Santa Claus has his own postal code,True,170.0
+342,There are seven nights in Kwanzaa,True,171.0
+343,Memorial Day has a special set of instructions regarding raising and lowering the U.S. flag,True,172.0
+344,Polo takes up the largest amount of space in terms of land area,True,173.0
+345,Every golf ball has the same number of dimples,False,174.0
+346,Football players started wearing helmets in 1943,True,175.0
+347,Brazil is the only nation to have played in every World Cup finals tournament,True,176.0
+348,World-renowned jeweler Tiffany & Co. is the maker of the Vince Lombardi trophy,True,177.0
+349,There are 30 NFL teams,False,178.0
+350,The New York Marathon is the largest in the world,True,179.0
+351,Three strikes in a row in bowling is called a chicken,False,180.0
+352,An astronaut has played golf on the moon,True,181.0
+353,The Tour de France always finishes in Italy,False,182.0
+354,Soccer (football) is estimated to have more than 2 billion fans around the world,False – Soccer is the world’s most popular sport with an estimated 4 billion fans worldwide. More than half the world’s population tunes in to watch the World Cup every four years.,183.0
+355,President George Washington brought macaroni and cheese to the USA,False,184.0
+356,Marvel published its first comic in October 1939,True,185.0
+357,The letter “T” is the most common in the English Language,False,186.0
+358,People who have chiclephobia are afraid of cats,False,187.0
+359,John Glenn became the oldest astronaut when he traveled to space at the age of 53,False,188.0
+360,All the kings in a standard deck of cards have a mustache,False,189.0
+361,Pepsi was the first soft drink to be enjoyed in outer space,False,190.0
+362,The name of Batman’s butler is Albert,False,191.0
+363,Fortune cookies were invented in China,False,192.0
+364,Henry VIII had eight wives,False,193.0
+365,The maximum length for a video posted on TikTok is 45 seconds,False,194.0
+366,The letter “J” is the only letter in the alphabet not included in the periodic table,True,195.0
+367,Every country in the world has a rectangular flag,False,196.0
+368,"The Harry Potter film, Chamber of Secrets, is the longest film of the Harry Potter movies",True,197.0
+369,The official color of the Golden Gate Bridge in California is “Tennessee Orange.”,False,198.0
+370,Dr. Pepper is the oldest soft drink in America,True,199.0

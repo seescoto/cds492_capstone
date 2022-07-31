@@ -70,4 +70,10 @@ df4 = pd.DataFrame(list(zip(questions, answers)), columns = ['question', 'truthV
 
 main = pd.concat([df3, df4], ignore_index = True)
 
+#get csv in and merge this dataset, then save back to csv 
+
+csv = pd.read_csv('qa.csv')
+new = pd.concat([main, csv], ignore_index = True) 
+new.to_csv('qa.csv')
+
 
