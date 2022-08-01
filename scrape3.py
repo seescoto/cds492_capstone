@@ -88,6 +88,7 @@ df2 = pd.DataFrame(list(zip(qs, ans)), columns = ['question', 'truthValue'])
 
 only /wp-admin disallowed on robots.txt, good to scrape
 '''
+
 url = "https://ponly.com/true-or-false-questions/"
 soup = BeautifulSoup(requests.get(url).content, 'html.parser')
 blog = soup.find('div', class_ = "entry-content")
@@ -118,12 +119,13 @@ for i in range(len(ps)):
     else:
         continue
     
+    
+    
 df3 = pd.DataFrame(list(zip(qs, ans)), columns = ['question', 'truthValue'])
-                
+ 
+#get csv, merge, export back to csv               
 main = pd.read_csv('qa.csv') 
-
 main = pd.concat([main, df1, df2, df3], ignore_index = True)
-
 main.to_csv('qa.csv')
         
         
