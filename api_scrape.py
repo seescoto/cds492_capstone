@@ -91,7 +91,7 @@ df['snippet'] = snips
 df['description'] = descs 
 df['results'] = nums
 
-df.to_csv('qa_full.csv')
+cds df.to_csv('qa_full.csv')
 
 '''
 #error halfway through when i = 170, prob from removed na
