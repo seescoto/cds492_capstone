@@ -3,7 +3,7 @@
 \usepackage{url}
 
 %smaller subtitle
-\usepackage{relsize} 
+%\usepackage{relsize} 
 
 %mutli line comments
 \newcommand{\comment}[1]{}
@@ -13,8 +13,8 @@
 
 %opening
 \title{Fake News?
-	\\ \vspace{2mm} \smaller[2]{}Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
-	%\\Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
+	%\\ \vspace{2mm} \smaller[2]{}Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
+	\\Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
 \author{Sofia Escoto}
 
 \begin{document}
@@ -22,6 +22,7 @@
 	
 	\section{Introduction}
 		
+		%week2 assignment
 		%1.1. Introduction - state your goal and hypothesis, why it is original and why nobody solved it before (10p)
 		
 		The spread of misinformation is a large societal problem, exacerbated by the widespread use of social media. Today, anyone can log into their computer and say something that the entire world can see. While the malicious spread of misinformation is  often seen in regards to politics, it's not exclusive to it, and though anyone with a computer can also access a search engine and tell if a statement is false based on the results, it's rare that a person will take the time out of their day to do so. Because of this, many people spread false, and potentially harmful, statements online due to ignorance.
@@ -57,6 +58,7 @@
 	\section{Literature Review}
 		
 		%1.2. Literature review - describe similar work that has been done, with references, and where that work failed short of answering your question (10p)
+		
 		Most often when a person wants to know whether something online is true or not, they're concerned with political articles. Using machine learning to analyze fake news (which is defined as any article that is ``intentionally and verifiably false") has been studied widely in recent years, using context, word usage, and sources determine credibility \cite{shu19}. This is very useful when dealing with long-form journalism, but isn't applicable for finding truth values of individual statements. Because a large part of this method involves analyzing the source the article came from, any lone statement from social media sites like Twitter or Facebook would be at a disadvantage. Alternatively, if attempting to fact-check a single sentence in an article, the truth value of this statement may not match up with that of the article as a whole, and could lead to inaccurate results. 
 		
 		Other research being done in this sphere, especially considering individual sentences, are essentially trying to get machines to use `common sense.' Some of these models aim for the computer to `understand' a given sentence, taking meaning from it and allowing a user to get the gist of a claim without needing to know exactly what was said. This can include determining the emotional connotation of a sentence, classifying opinions and reviews as negative or positive, or categorizing sentences based on broad subject matter. These models can start without prior knowledge of words and their meanings, only given an alphabet and large training set \cite{zhang15}, or build off of individual words and their definitions in addition to grammatical rules \cite{wang05}, because they rely on previous experience. This means that simple, common-sense statements can be analyzed with relative ease, but statements that require more than just reasoning can not.
@@ -69,11 +71,35 @@
 	
 		%1.3. Add a link to the dataset/s you plan to work with (must be open source); if the dataset is not very big, you are also welcome to submit it here on Blackboard or on your Github repository (5p).
 		
-		Since there isn't an open-source dataset of statements with truth values, I'm going to collect this data by scraping trivia websites or articles that tell the user whether the sentence is true or not. When I have enough statements, ideally at least 500 instances, I'll use an API to enter the statement in a Google search and scrape the results for `snippets' to input into the dataset as well \cite{k_api}. Once added to the dataset, cleaning will include removing markdown commands.
+		Since there isn't an open-source dataset of statements with truth values, I'm decided to collect this data by scraping trivia websites and articles that tell the user whether a sentence is true or not. When I have enough statements, ideally at least 500 instances, I would use an API to enter the statement in a Google search and scrape the results for `snippets' to input into the dataset as well \cite{k_api}. Once added to the dataset, cleaning will include removing markdown commands.
 		
+		%week3 assignment
+		%2. Continue your technical report (you are welcome to submit the same as you did last week or a revised report if I asked you so, plus the following):
 		
-	\bibliography{492}
+		%2.1. first exploration of the data (summary statistics, number of variables, which are the variables of interest, which you will discard, etc.) (10p)
+			
+		Using the bs4 package in python and multiple websites (\cite{tf1}, \cite{tf2}, \cite{tf3}, \cite{tf4}, \cite{tf5}, \cite{tf6}, \cite{tf7}), I gathered 573 statements and their truth values. My original goal was 500 statements, but because I did not manually check to see if there were similarities in each statement, 573 gives a good margin of error in case there are duplicate statements from two different websites. Then I used an API to scrape Google and collect the "featured snippet" that comes up when the claim is searched, the descriptions from the first 10 results, and the number of results that come up in the search \cite{a_api} \footnote{Note that I used a different API for this initial scrape than I plan to use when constructing my web app that will deploy the model. This is because this API allows for 1,000 searches per month which is convenient for populating a large dataset all at once, and the other API allows for 100 searches per day which is convenient for an app where fewer searches will be made daily.}. This gave me a total of five features, four of type string (`statement', `snippet', `description', `results') and one of type boolean (`truthValue').
+		
+	\section{Methods}
+		
+		%2.2. the methods you are using and why you are choosing these methods for the goal you stated in Week 2 (10p)
+		
+		%2.3. discuss the the pros and cons for the methodology (5p).
+		
+		Research has shown that using CNNs in NLP is very beneficial \cite{kim14}. Human language is much more complex than classes like yes/no or numbers like integers/floats, and CNN's pooling ability allows for dimension reduction and the analysis of very complex data. With my research, this will be entiely necessary; the 'description' feature in this dataset, for example, has an average of over 1300 characters in each instance. Besides the technical benefits of CNNs, the implimentation in python with TensorFlow is widely documented online and will be easy to trouble-shoot if I run into problems. Though CNNs can be very computationally expensive, they usually return more accurate classifications than other less complex machine learning models, which is very important to me in this project.
+		
+			
+			
+			
+
+			
+
+		%2.2. the methods you are using and why you are choosing these methods for the goal you stated in Week 2 (10p)
+		
+		%2.3. discuss the the pros and cons for the methodology (5p).
+		
 	\bibliographystyle{unsrt}
+	\bibliography{492}
 	%if gets out of order - style = unsrtnat
 \end{document}
 

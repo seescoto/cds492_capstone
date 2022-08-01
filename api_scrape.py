@@ -91,4 +91,12 @@ df['results'] = nums
 
 #df.to_csv('qa_full.csv')
 
+'''
 #error halfway through when i = 170
+halfDoneDf = df[0:170]
+halfDoneDf['snippet'] = snips
+halfDoneDf['description'] = descs
+halfDoneDf['results'] = nums
+
+halfDoneDf.to_csv('half_qa.csv')
+'''
