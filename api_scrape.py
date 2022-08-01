@@ -84,15 +84,17 @@ for i in range(len(df)):
         #total results
         nums.append(results['total'])
     
-    
+
+df = df.reindex(index = range(573))
+
 df['snippet'] = snips
 df['description'] = descs 
 df['results'] = nums
 
-#df.to_csv('qa_full.csv')
+df.to_csv('qa_full.csv')
 
 '''
-#error halfway through when i = 170
+#error halfway through when i = 170, prob from removed na
 halfDoneDf = df[0:170]
 halfDoneDf['snippet'] = snips
 halfDoneDf['description'] = descs
