@@ -33,27 +33,6 @@
 		
 		 With this proposed model, the truth values of objective statements will be available with a single click to ordinary Internet users, who may have otherwise just taken whatever they read online at face value.
 		
-
-		\comment{
-			 What is the problem?
-			 Why is it interesting and important?
-			 Why is it hard? (E.g., why do naive approaches fail?)
-			 Why hasn't it been solved before? (Or, what's wrong with previous proposed solutions? How does mine differ?)
-			 What are the key components of my approach and results? Also include any specific limitations.
-			\bibliography{technical paper}
-			
-			question: is it possible to determine whether an individual statement (given no other context) is true or false with 80\% accuracy?
-			
-			goal: determine whether a statement found online can be trusted without making the user go and look it up and determine for themselves
-			
-			h0: it is not possible to predict the accuracy of common statements with 80\% accuracy or above through simple web scraping and sentiment analysis
-			
-			h1: it is possible to predict the accuracy of common statements with 80\% accuracy or above using simple web scraping and sentiment analysis.
-			
-			original because most fake news models are focused solely on political content and scanning website credibility, not focusing on general facts and figures. hasn't been solved before bc it's easy to find these answers with a google search. it's still important, though, because most people DONT go find the answers, simply take them at face value
-		
-		} 
-		
 		
 	\section{Literature Review}
 		
@@ -71,14 +50,14 @@
 	
 		%1.3. Add a link to the dataset/s you plan to work with (must be open source); if the dataset is not very big, you are also welcome to submit it here on Blackboard or on your Github repository (5p).
 		
-		Since there isn't an open-source dataset of statements with truth values, I'm decided to collect this data by scraping trivia websites and articles that tell the user whether a sentence is true or not. When I have enough statements, ideally at least 500 instances, I would use an API to enter the statement in a Google search and scrape the results for `snippets' to input into the dataset as well \cite{k_api}. Once added to the dataset, cleaning will include removing markdown commands.
+		Since there isn't an open-source dataset of statements with truth values, I decided to collect this data by scraping trivia websites and articles that tell the user whether a statement is true or not. When I have enough claims, ideally at least 500 instances, I would use an API to enter the statement in a Google search and scrape the results for `snippets' to input into the dataset as well \cite{k_api}. Once added to the dataset, cleaning will include removing markdown commands.
 		
 		%week3 assignment
 		%2. Continue your technical report (you are welcome to submit the same as you did last week or a revised report if I asked you so, plus the following):
 		
 		%2.1. first exploration of the data (summary statistics, number of variables, which are the variables of interest, which you will discard, etc.) (10p)
 			
-		Using the bs4 package in python and multiple websites (\cite{tf1}, \cite{tf2}, \cite{tf3}, \cite{tf4}, \cite{tf5}, \cite{tf6}, \cite{tf7}), I gathered 573 statements and their truth values. My original goal was 500 statements, but because I did not manually check to see if there were similarities in each statement, 573 gives a good margin of error in case there are duplicate statements from two different websites. Then I used an API to scrape Google and collect the "featured snippet" that comes up when the claim is searched, the descriptions from the first 10 results, and the number of results that come up in the search \cite{a_api} \footnote{Note that I used a different API for this initial scrape than I plan to use when constructing my web app that will deploy the model. This is because this API allows for 1,000 searches per month which is convenient for populating a large dataset all at once, and the other API allows for 100 searches per day which is convenient for an app where fewer searches will be made daily.}. This gave me a total of five features, four of type string (`statement', `snippet', `description', `results') and one of type boolean (`truthValue').
+		Using the bs4 package in python and multiple websites (\cite{tf1}, \cite{tf2}, \cite{tf3}, \cite{tf4}, \cite{tf5}, \cite{tf6}, \cite{tf7}), I gathered 573 statements and their truth values. My original goal was 500 statements, but because I did not manually check to see if there were similarities in each statement, 573 gives a good margin of error in case there are duplicate statements from two different websites. Then I used an API to scrape Google and collect the "featured snippet" that comes up when the claim is searched, the descriptions from the first 10 results, and the number of results that come up in the search \cite{a_api} \footnote{Note that I used a different API for this initial scrape than I plan to use when constructing my web app that will deploy the model. This is because this API allows for 1,000 searches per month which is convenient for populating a large dataset all at once, and the other API allows for 100 searches per day which is convenient for an app where fewer searches will be made more often.}. This gave me a total of five features, four of type string (`statement', `snippet', `description', `results') and one of type boolean (`truthValue').
 		
 	\section{Methods}
 		
@@ -86,23 +65,52 @@
 		
 		%2.3. discuss the the pros and cons for the methodology (5p).
 		
-		Research has shown that using CNNs in NLP is very beneficial \cite{kim14}. Human language is much more complex than classes like yes/no or numbers like integers/floats, and CNN's pooling ability allows for dimension reduction and the analysis of very complex data. With my research, this will be entiely necessary; the 'description' feature in this dataset, for example, has an average of over 1300 characters in each instance. Besides the technical benefits of CNNs, the implimentation in python with TensorFlow is widely documented online and will be easy to trouble-shoot if I run into problems. Though CNNs can be very computationally expensive, they usually return more accurate classifications than other less complex machine learning models, which is very important to me in this project.
+		Research has shown that using CNNs in NLP is very beneficial \cite{kim14}. Human language is much more complex than classes like yes/no or numbers like integers/floats, and CNN's pooling ability allows for dimension reduction and the analysis of very complex data. With my research, this will be entirely necessary; the 'description' feature in this dataset, for example, has an average of over 1300 characters in each instance. Besides the technical benefits of CNNs, the implimentation in python with TensorFlow is widely documented online and will be easy to trouble-shoot if I run into problems. Though CNNs can be very computationally expensive, they usually return more accurate classifications than other less complex machine learning models, which is very important to me in this project.
 		
 			
-			
-			
-
-			
-
-		%2.2. the methods you are using and why you are choosing these methods for the goal you stated in Week 2 (10p)
 		
-		%2.3. discuss the the pros and cons for the methodology (5p).
+		%feedback
+		%CNNs and NLP are two very different things. Actually CNNs are better for image analysis and computer vision than for NLP. You don't have the time to use all of these methods.For classification purposes, you are better off in this case with a simple kmeans algorithm.
+		
+		%For EDA, include the summary of the data that you scrapped and a data dictionary (which are the variables you are ultimately working with and what they represent).
+		
+		
+		
+		
+		
+		%3. Submit the technical report that, additionally to what you have written before, also includes:
+		%3.1. final results of your data analysis; these should be included in your GitHub repository as well, therefore submit the link to GitHub too (10p)
+		%3.2. description of the methodology you used and why (rationale) (10p).
+		%3.3. preliminary visualizations of your results (5p).
 		
 	\bibliographystyle{unsrt}
 	\bibliography{492}
 	%if gets out of order - style = unsrtnat
 \end{document}
 
+
+
+%intro planning.... ignore!!!
+
+\comment{
+	What is the problem?
+	Why is it interesting and important?
+	Why is it hard? (E.g., why do naive approaches fail?)
+	Why hasn't it been solved before? (Or, what's wrong with previous proposed solutions? How does mine differ?)
+	What are the key components of my approach and results? Also include any specific limitations.
+	\bibliography{technical paper}
+	
+	question: is it possible to determine whether an individual statement (given no other context) is true or false with 80\% accuracy?
+	
+	goal: determine whether a statement found online can be trusted without making the user go and look it up and determine for themselves
+	
+	h0: it is not possible to predict the accuracy of common statements with 80\% accuracy or above through simple web scraping and sentiment analysis
+	
+	h1: it is possible to predict the accuracy of common statements with 80\% accuracy or above using simple web scraping and sentiment analysis.
+	
+	original because most fake news models are focused solely on political content and scanning website credibility, not focusing on general facts and figures. hasn't been solved before bc it's easy to find these answers with a google search. it's still important, though, because most people DONT go find the answers, simply take them at face value
+	
+} 
 
 
 %lit review summaries.... ignore!!!!

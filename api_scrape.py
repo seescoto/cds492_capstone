@@ -11,6 +11,7 @@ data cleaning, collecting data snippets for the cnn with a web search api
 import pandas as pd 
 import urllib 
 import requests 
+import config #api-key
 
 
 #using a free api with 1000 scrapes / month for original scrape (by apigeek)
@@ -32,7 +33,7 @@ df.loc[df['truthValue'].str.contains('False', case = False, na = False), 'truthV
 
 
 '''
-headers = {"x-rapidapi-key": "48051f6be6msh19d4ff97eb15371p1a0999jsn0f81c0a48051",
+headers = {"x-rapidapi-key": config.api_key,
            "x-rapidapi-host" :"google-search3.p.rapidapi.com"}
 
 query = {"q": df['question'][0],
@@ -51,7 +52,7 @@ print(results)
 
 #now go through all values in the dataframe and add featured_snippet + descriptions
 
-headers = {"x-rapidapi-key": "48051f6be6msh19d4ff97eb15371p1a0999jsn0f81c0a48051",
+headers = {"x-rapidapi-key": config.api_key,
            "x-rapidapi-host" :"google-search3.p.rapidapi.com"}
 
 snips = [] 
