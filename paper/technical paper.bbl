@@ -81,11 +81,10 @@ apigeek.
 \newblock \url{https://rapidapi.com/apigeek/api/google-search3/}.
 \newblock Accessed: 2022-08-01.
 
-\bibitem{kim14}
-Yoon Kim.
-\newblock Convolutional neural networks for sentence classification.
-\newblock In {\em Proceedings of the 2014 Conference on Empirical Methods in
-  Natural Language Processing ({EMNLP})}, pages 1746--1751, Doha, Qatar, oct
-  2014. Association for Computational Linguistics.
+\bibitem{tds}
+Text classification using k nearest neighbors.
+\newblock
+  \url{https://towardsdatascience.com/text-classification-using-k-nearest-neighbors-46fa8a77acc5#:~:text=KNN%20algorithm%20is%20used%20to,to%20find%20the%20closest%20match.},
+  2018.
 
 \end{thebibliography}

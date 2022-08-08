@@ -3,7 +3,7 @@
 \usepackage{url}
 
 %smaller subtitle
-%\usepackage{relsize} 
+\usepackage{relsize} 
 
 %mutli line comments
 \newcommand{\comment}[1]{}
@@ -13,8 +13,8 @@
 
 %opening
 \title{Fake News?
-	%\\ \vspace{2mm} \smaller[2]{}Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
-	\\Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
+	\\ \vspace{2mm} \smaller[2]{}Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
+	%\\Fact-Checking Individual Statements With Web Scraping and Sentiment Analysis}
 \author{Sofia Escoto}
 
 \begin{document}
@@ -65,7 +65,9 @@
 		
 		%2.3. discuss the the pros and cons for the methodology (5p).
 		
-		Research has shown that using CNNs in NLP is very beneficial \cite{kim14}. Human language is much more complex than classes like yes/no or numbers like integers/floats, and CNN's pooling ability allows for dimension reduction and the analysis of very complex data. With my research, this will be entirely necessary; the 'description' feature in this dataset, for example, has an average of over 1300 characters in each instance. Besides the technical benefits of CNNs, the implimentation in python with TensorFlow is widely documented online and will be easy to trouble-shoot if I run into problems. Though CNNs can be very computationally expensive, they usually return more accurate classifications than other less complex machine learning models, which is very important to me in this project.
+		%Research has shown that using CNNs in NLP is very beneficial \cite{kim14}. Human language is much more complex than classes like yes/no or numbers like integers/floats, and CNN's pooling ability allows for dimension reduction and the analysis of very complex data. With my research, this will be entirely necessary; the 'description' feature in this dataset, for example, has an average of over 1300 characters in each instance. Besides the technical benefits of CNNs, the implimentation in python with TensorFlow is widely documented online and will be easy to trouble-shoot if I run into problems. Though CNNs can be very computationally expensive, they usually return more accurate classifications than other less complex machine learning models, which is very important to me in this project.
+		
+		I hope to classify these statements using a K nearest-neighbors algorithm. K nearest-neighbors (KNN) compares an instance to k other instances that are closest to it, aka its `neighbors.' Because of KNN's simplicity and ease of use, this seems like a good option. Although KNNS can be slower than other algorithms and suffer from the curse of dimensionality (slowing down significantly as more features are considered), because I don't have a very large dataset or very many features to test, I think I will be fine.
 		
 			
 		
@@ -74,8 +76,24 @@
 		
 		%For EDA, include the summary of the data that you scrapped and a data dictionary (which are the variables you are ultimately working with and what they represent).
 		
+	\section{Results}
 		
 		
+		Using seven public websites with true/false questions, I scraped both the questions and their truth values into a dataset, giving me 573 instances. Once the questions and truth values were set in the dataset, using an API I scraped Google to give a summary of what the search for each question would bring up, the number of results, and the descriptions of the first ten sites in the search. A data dictionary is as follows:
+		
+		\begin{itemize}
+			\item question: (type: string) An objective true or false statement. Ex. \texttt{Most people have 12 toes}
+				
+			\item truthValue: (type: boolean) A boolean value that corresponds to the question in its instance. Ex. `most people have 12 toes' as a question would result in \texttt{FALSE} as a truthValue.
+				
+			\item snippet: (type: string) A one-sentence description that Google provides after searching the question in its instance. Ex. there will be no snippet that results from the question `most people have 12 toes,' meaning the value in this instance will be \texttt{None}
+				
+			\item description: (type: string) A collection of the first 10 descriptions that show up in a Google search of the question. Ex. the description in this variable for the question `most people have 12 toes,' begins with \texttt{Be it a baby born with 12 toes and 12 fingers or a girl with elf-like ears, some people are just so special, they stand out from the crowd without trying. Its almost as if Mother Nature was feeling too creative when she created them.} and carries on to have 9 other similar sentences
+				
+			\item results: (type: integer) The number of results that Google will come up with after searching the question. Ex. `most people have 12 toes' will return \texttt{1772}| results.
+		\end{itemize}
+		
+		A KNN model based on non-categorical and non-numerical values was not included in scikit-learn's base packages, so with the help of the Towards Data Science website \cite{tds} I created my own algorithm for the purposes of natural language processing. The simplicity of KNNs was very useful here, because I otherwise may not have understood how to implement the process in my own code. This method does have the drawback of being slower than other models, especially considering that I relied on a naive solution of nested for loops when building the functions in the class, but it is easy-to-use and fairly accurate. 
 		
 		
 		%3. Submit the technical report that, additionally to what you have written before, also includes:
