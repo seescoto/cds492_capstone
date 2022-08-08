@@ -4,7 +4,7 @@ Created on Mon Aug  7 18:41:36 2022
 
 @author: seesc
 
-nlp for df
+processing text in df, preparing for modelling
 """
 #general
 #import numpy as np
