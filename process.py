@@ -6,13 +6,11 @@ Created on Mon Aug  7 18:41:36 2022
 
 processing text in df, preparing for modelling
 """
-#general
-#import numpy as np
-#from numpy import random
+import numpy as np
 import pandas as pd
-#import sklearn as skl
+import sklearn as skl
 #import gensim #idk
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 #import re #idk
 #from bs4 import BeautifulSoup
 
@@ -26,10 +24,11 @@ import pandas as pd
 #nlp
 import nltk
 from nltk.corpus import wordnet as wn
-from nltk.corpus import genesis
+#from nltk.corpus import genesis
 from nltk.stem import WordNetLemmatizer
-downloads = ['omw-1.4','genesis', 'wordnet', 'punkt', 'averaged_perceptron_tagger']
 '''
+downloads = ['omw-1.4','genesis', 'wordnet', 'punkt', 'averaged_perceptron_tagger']
+
 for d in downloads:
     nltk.download(d)
 '''
@@ -44,13 +43,6 @@ from nltk.tokenize import word_tokenize
 #dataframe
 df = pd.read_csv('qa_full.csv')
 
-'''
-class KNN_Classifier():
-    def __init__(self, k = 3, distance_type = 'path'):
-        self.k = k
-        self.distance_type = distance_type
-
-'''
 
 #text processing with nltk
 def clean(txt):
