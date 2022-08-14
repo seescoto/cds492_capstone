@@ -10,7 +10,7 @@ import numpy as np
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
-from model import knn
+from model2 import knn
 import matplotlib.pyplot as plt
 import nltk
 #from nltk.corpus import wordnet as wn
@@ -29,3 +29,8 @@ mod.fit(xTrain, yTrain)
 yPred = mod.predict(xTest)
 
 print("Accuracy: ", metrics.accuracy_score(yTest, yPred))
+
+with open('preds.txt', 'w') as f:
+    f.write('truthValue \t\t\t predicted truthValue')
+    for p in range(len(yPred)):
+        f.write("\n" + str(yTest[p]) + "\t\t\t" + str(yPred))
