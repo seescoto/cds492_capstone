@@ -22,6 +22,10 @@ x = df[['question', 'snippet', 'description']]
 y = df['truthValue']
 xTrain, xTest, yTrain, yTest = train_test_split(x, y, random_state = 13)
 
+#split into 6 dfs, because toSynsets takes so long each one will take ~1hr just to create adjMatrix
+#rest of computation pretty fast, so save the adjMatrix and do new calculations on that instead
+#
+
 ###training
 mod = knn(k = 5, distanceType = 'path')
 mod.fit(xTrain, yTrain)

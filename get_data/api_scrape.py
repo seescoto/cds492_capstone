@@ -91,6 +91,7 @@ df = df.reindex(index = range(573))
 df['snippet'] = snips
 df['description'] = descs
 df['results'] = nums
+df.fillna('', inplace = True)
 
 cds df.to_csv('qa_full.csv', index = False)
 

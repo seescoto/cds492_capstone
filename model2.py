@@ -15,7 +15,7 @@ from nltk.corpus import wordnet as wn
 import statistics as stat
 
 class knn():
-    #k, distanceType, xTrain, yTrain, xTest adjMatrix
+    #knn algorithm for nlp, based off code from towardsdatascience.com
 
     def __init__(self, k = 3, distanceType = 'path'):
         self.k = k
@@ -25,57 +25,58 @@ class knn():
         self.xTrain = xTrain
         self.yTrain = yTrain
 
-    #knn algorithm for nlp, based off code from towardsdatascience.com
-    def predict(self, xTest):
+    def getAdjMatrix(self, xTest):
         self.xTest = xTest
-        yPred = []
-        self.adjMatrix = np.empty(len(self.xTest), len(self.xTrain))
+        self.adjMatrix = np.empty([len(self.xTest), len(self.xTrain)], dtype = object)
 
         #create adjMatrix so no need to re-calculate with k > 1
         for i in range(len(self.xTest)):
             for j in range(len(self.xTrain)):
                 sim = self.getStringSimilarity(self.xTest.iloc[i], self.xTrain.iloc[j])
-                self.adjMatrix[i][j] = sim
+                self.adjMatrix[i][j] = [sim, j]
+
+    def predict(self):
+        yPred = []
 
         #find instances thats most similar from training set, then assign same label
         for i in range(len(xTest)):
-            yPred.append(self.predictEach(xTest.iloc[i]))
+            yPred.append(self.predictEach(xTest.iloc[i], i))
         return yPred
 
+    def predictEach(self, instance, row):
+        #predicts each using k neighbors
 
-    def predictEach(self, instance):
-      #predicts each using k
+        #find first k maxes in the row
+        maxes = self.getKMaxes(self.adjMatrix[row])
 
-      pastMax = 0 #only reset to 0 once
-      maxes = []
-      for k in range(self.k):
-        maxSim = 0
-        index = 0
-        for j in range(self.xTrain.shape[0]):
-          sim = self.getStringSimilarity(instance, self.xTrain.iloc[j])
-          #first round will treat differently, max of list is pastMax
-          if k == 0:
-            if sim > maxSim:
-              maxSim = sim
-              index = j
-          #all loops after the first maxSim must be < pastMax so we dont repeat
-          else:
-            if sim > maxSim and sim < pastMax:
-              maxSim = sim
-              index = j
-        maxes.append(self.yTrain.iloc[index])
-
-      #return most common answer for neighbors
-      #if a tie for most common return most common of k-1 neighbors
-      #else return most similar (first neighbor) (won't be a prob with t/f but future proofing)
-      try:
-        return(stat.mode(maxes))
-      except:
+         #return most common answer for neighbors
+         #if a tie for most common return most common of k-1 neighbors
+         #else return most similar (first neighbor) (won't be a prob with t/f but future proofing)
         try:
-          return(stat.mode(maxes[-1:]))
+          return(stat.mode(maxes))
         except:
-          return(maxes[0])
+          try:
+            return(stat.mode(maxes[-1:]))
+          except:
+            return(maxes[0])
 
+    def getKMaxes(self, similarities):
+
+        similarities = similarities.tolist()
+        maxes = []
+        for k in range(self.k):
+            m = max(similarities)
+            similarities.remove(m[) #remove that index
+            maxes.append(m)
+
+        #each item in maxes is [similarity_score (float), col (index in yTrain)]
+
+        #get t/f values
+        truthValues = []
+        for i in maxes:
+            truthValues.append(yTrain[i[1]])
+
+        return truthValues
 
     def getTag(self, tag):
         #get tag from nltk.pos_tag to wordnet.synsets so similarity can be compared
