@@ -10,6 +10,7 @@
 
 %bibliography citations in order
 \usepackage[numbers,sort&compress]{natbib}
+\usepackage{graphicx}
 
 %opening
 \title{Fake News?
@@ -104,12 +105,28 @@
 			\item results: (type: integer) The number of results that Google will come up with after searching the question. Ex. `most people have 12 toes' will return \texttt{1772}| results.
 		\end{itemize}
 		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\linewidth]{accuracies-line.png}
+			\caption{Scatter plot of the accuracy for models using k = 1-20 and plotting the mean of each k in purple. A red line at 50\% shows the cut-off for the model being less-accurate than guessing at random.}
+			\label{fig:scatter}
+		\end{figure}
+		
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.8\linewidth]{accuracies-box.png}
+			\caption{Box plot of the accuracy for models using k = 1-20 with the median shown as a purple line. A red line at 50\% shows the cut-off for the model being less-accurate than guessing at random.}
+			\label{fig:box}
+		\end{figure}
+	
 		I created my own user-friendly KNN algorithm (as seen in \texttt{model.py}) that used the nltk package to compare statements and store their similarities in an adjacency matrix. Using this array, I was able to predict truth values of the same statements using different values of k, allowing me to see the number of `neighbors' that gave me the best results.
-		I was able to achieve a mean accuracy of BCNFNF at k = JCBVFNF, which I believe is sufficient considering the scope of this class and my access to computational resources. 
+		I was able to achieve a mean accuracy of 58\% at k = 3 and continuing comparably all the way up to k = 10 (shown in figures \ref{fig:scatter} and \ref{fig:box}) which I believe is sufficient considering the scope of this class and my access to computational resources.
 		
-		With more computing power, I'm confident that I could increase the accuracy of this model by at least BCNSDFVNNSDVFD\%. One reason that the accuracy is so comparatively low is because, in order to get results in a reasonable amount of time, I had to partition the data into 6 segments so as to create six 80x20 adjacency matrices (requiring knn.process() to compare 9,600 text statements) as opposed to one 480x120 matrix that would require 57,600 comparisons. Comparing 9,600 segments and saving the results took me over two hours on my PC, so although the accuracy would be improved with a broader training set, attempting this would not have been realistic.
 		
-		Once the adjacency matrix has been calculated, however, knn.predict() takes a very short time to output results since it uses the same matrix for all values of k, so long as the training and testing set stay constant. If I had access to a computer that could run for 12+ hours uninterrupted, I would be able to analyze more.
+		
+		With more computing power, I'm confident that I could increase the accuracy of this model by at least 15\%. One reason that the accuracy is so comparatively low is because, in order to get results in a reasonable amount of time, I had to partition the data into 6 segments so as to create six 80x20 adjacency matrices (requiring knn.process() to compare 9,600 text statements) as opposed to one 480x120 matrix that would require 57,600 comparisons. Comparing 9,600 segments and saving the results took me over two hours on my PC, so although the accuracy would be improved with a broader training set, attempting this would not have been realistic.
+		
+		Once the adjacency matrix has been calculated, however, knn.predict() takes a very short time to output results since it uses the same matrix for all values of k, so long as the training and testing set stay constant. If I had access to a computer that could run for 12+ hours uninterrupted, I would be able to analyze my entire dataset at once, with the option of using even more data by scraping some additional websites.
 		
 		
 		%feedback

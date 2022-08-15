@@ -102,5 +102,5 @@ plt.hlines(xmin = 0, xmax = 21, y = 0.5, color = 'red', linestyles = '--',
 plt.ylabel('Accuracy')
 plt.xlabel('# of neighbors')
 plt.title('Accuracy of KNN using 80x20 Adjacency Matrices')
-plt.savefig('accuraces-box.png')
+plt.savefig('accuracies-box.png')
 #
