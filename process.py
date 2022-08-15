@@ -75,4 +75,5 @@ cols = ['question', 'snippet', 'description']
 for c in cols:
     df[c] = df[c].apply(clean)
 
+df.fillna('', inplace = True)
 df.to_csv('processed_qa.csv', index = False)

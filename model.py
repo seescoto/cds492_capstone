@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Aug 7 22:17:12 2022
+Created on Wed Aug 10 01:43:26 2022
 
 @author: seesc
 
@@ -11,8 +11,10 @@ import nltk
 import numpy as np
 from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet as wn
+import statistics as stat
 
 class knn():
+    #knn algorithm for nlp, based off code from towardsdatascience.com
 
     def __init__(self, k = 3, distanceType = 'path'):
         self.k = k
@@ -22,22 +24,58 @@ class knn():
         self.xTrain = xTrain
         self.yTrain = yTrain
 
-    #knn algorithm for nlp, based off code from towardsdatascience.com
-    def predict(self, xTest):
+    def process(self, xTest):
         self.xTest = xTest
+        self.adjMatrix = np.empty([len(self.xTest), len(self.xTrain)], dtype = object)
+
+        #create adjMatrix so no need to re-calculate with k > 1
+        for i in range(len(self.xTest)):
+            for j in range(len(self.xTrain)):
+                sim = self.getStringSimilarity(self.xTest.iloc[i], self.xTrain.iloc[j])
+                self.adjMatrix[i][j] = [sim, j]
+
+    def predict(self):
         yPred = []
 
-        #find instance thats most similar from training set, then assign same label
+        #find instances thats most similar from training set, then assign same label
         for i in range(len(xTest)):
-            maxSim = 0
-            index = 0
-            for j in range(self.xTrain.shape[0]):
-                sim = self.getSimilarity(xTest.loc[i], self.xTrain[j])
-                if sim > maxSim:
-                    maxSim = temp
-                    index = j
-            yPred.append(self.yTrain[index])
+            yPred.append(self.predictEach(xTest.iloc[i], i))
         return yPred
+
+    def predictEach(self, instance, row):
+        #predicts each using k neighbors
+
+        #find first k maxes in the row
+        maxes = self.getKMaxes(self.adjMatrix[row])
+
+         #return most common answer for neighbors
+         #if a tie for most common return most common of k-1 neighbors
+         #else return most similar (first neighbor) (won't be a prob with t/f but future proofing)
+        try:
+          return(stat.mode(maxes))
+        except:
+          try:
+            return(stat.mode(maxes[-1:]))
+          except:
+            return(maxes[0])
+
+    def getKMaxes(self, similarities):
+
+        similarities = similarities.tolist()
+        maxes = []
+        for k in range(self.k):
+            m = max(similarities)
+            similarities.remove(m) #remove that index
+            maxes.append(m)
+
+        #each item in maxes is [similarity_score (float), col (index in yTrain)]
+
+        #get t/f values
+        truthValues = []
+        for i in maxes:
+            truthValues.append(self.yTrain.iloc[i[1]][-1]) #just truthValue
+
+        return truthValues
 
     def getTag(self, tag):
         #get tag from nltk.pos_tag to wordnet.synsets so similarity can be compared
@@ -48,6 +86,7 @@ class knn():
         #turns string into synset so similarity can be compared
         #tokenizes, tags words, then finds synset for each combo
 
+        s = ' '.join(str(x) for x in list(s))
         words = word_tokenize(s + ' ')
 
         synsets = []
@@ -65,7 +104,7 @@ class knn():
         return synsets
 
     def getSimilarity(self, s1, s2, distanceType = 'path'):
-        #get normalized similarity scale of s1 on s2 (lists)
+        #get normalized similarity scale of s1 on s2 (lists of synsets)
         #s1 and s2 max similarities for all, sum and find mean
 
         s1Scores = []
@@ -86,9 +125,18 @@ class knn():
         normScore = np.mean(s1Scores)
         return normScore
 
-    def getTotalSimilarity(self, string1, string2):
-        #averages similarity of s1 on s2 and s2 on s1
-        synsets1 = self.toSynsets(string1)
-        synsets2 = self.toSynsets(string2)
+    def getStringSimilarity(self, string1, string2):
+        #averages similarity of s1 on s2 AND s2 on s1
 
-        return (self.getSimilarity(synsets1, synsets2) + self.getSimilarity(synsets2, synsets1)) / 2
+        '''
+        sList = []
+        for s in range(len(string1)):
+          synsets1 = self.toSynsets(string1[s])
+          synsets2 = self.toSynsets(string2[s])
+          sList.append(self.getSimilarity(synsets1, synsets2) + getSimilarity(synsets2, synsets1)/2)
+
+        return np.mean(sList)
+        '''
+        s1 = self.toSynsets(string1)
+        s2 = self.toSynsets(string2)
+        return (self.getSimilarity(s1, s2) + self.getSimilarity(s2, s1) / 2)
