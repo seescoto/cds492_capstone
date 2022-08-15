@@ -4,7 +4,7 @@ Created on Wed Aug 10 01:43:26 2022
 
 @author: seesc
 
-modelling using processed df
+knn() model class - uses already processed dataframe (gone through clean())
 """
 
 import nltk
@@ -13,8 +13,8 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import wordnet as wn
 import statistics as stat
 
+#knn algorithm for nlp, partially based off code from towardsdatascience.com
 class knn():
-    #knn algorithm for nlp, based off code from towardsdatascience.com
 
     def __init__(self, k = 3, distanceType = 'path'):
         self.k = k
@@ -38,12 +38,12 @@ class knn():
         yPred = []
 
         #find instances thats most similar from training set, then assign same label
-        for i in range(len(xTest)):
-            yPred.append(self.predictEach(xTest.iloc[i], i))
+        for i in range(len(self.xTest)):
+            yPred.append(self.predictEach(i))
         return yPred
 
-    def predictEach(self, instance, row):
-        #predicts each using k neighbors
+    def predictEach(self, row):
+        #predicts each row (instance) using k neighbors
 
         #find first k maxes in the row
         maxes = self.getKMaxes(self.adjMatrix[row])
@@ -61,6 +61,7 @@ class knn():
 
     def getKMaxes(self, similarities):
 
+        #returns k of the biggest similarity scores to
         similarities = similarities.tolist()
         maxes = []
         for k in range(self.k):
@@ -68,20 +69,23 @@ class knn():
             similarities.remove(m) #remove that index
             maxes.append(m)
 
-        #each item in maxes is [similarity_score (float), col (index in yTrain)]
+        #each item in maxes is formatted [similarity_score (float), col (index from yTrain, int)]
 
         #get t/f values
         truthValues = []
         for i in maxes:
-            truthValues.append(self.yTrain.iloc[i[1]][-1]) #just truthValue
+            #col = i[-1]
+            truthValues.append(self.yTrain.iloc[i[1]]) #just truthValue
 
         return truthValues
 
+    #provided by towardsdatascience
     def getTag(self, tag):
         #get tag from nltk.pos_tag to wordnet.synsets so similarity can be compared
         tags = {'N' : 'n', 'J' : 'a', 'R' : 'r', 'V' : 'v'}
         return tags.get(tag[0], None) #tag[0] incase list is given
 
+    #provided by towardsdatascience
     def toSynsets(self, s):
         #turns string into synset so similarity can be compared
         #tokenizes, tags words, then finds synset for each combo
@@ -103,6 +107,7 @@ class knn():
 
         return synsets
 
+    #provided by towardsdatascience
     def getSimilarity(self, s1, s2, distanceType = 'path'):
         #get normalized similarity scale of s1 on s2 (lists of synsets)
         #s1 and s2 max similarities for all, sum and find mean
@@ -127,16 +132,6 @@ class knn():
 
     def getStringSimilarity(self, string1, string2):
         #averages similarity of s1 on s2 AND s2 on s1
-
-        '''
-        sList = []
-        for s in range(len(string1)):
-          synsets1 = self.toSynsets(string1[s])
-          synsets2 = self.toSynsets(string2[s])
-          sList.append(self.getSimilarity(synsets1, synsets2) + getSimilarity(synsets2, synsets1)/2)
-
-        return np.mean(sList)
-        '''
         s1 = self.toSynsets(string1)
         s2 = self.toSynsets(string2)
         return (self.getSimilarity(s1, s2) + self.getSimilarity(s2, s1) / 2)

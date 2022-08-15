@@ -6,39 +6,25 @@ Created on Mon Aug  7 18:41:36 2022
 
 processing text in df, preparing for modelling
 """
-import numpy as np
+#regular imports
 import pandas as pd
-import sklearn as skl
-#import gensim #idk
-import matplotlib.pyplot as plt
-#import re #idk
-#from bs4 import BeautifulSoup
 
-#from sklearn.metrics import roc_auc_score
-#from sklearn.model_selection import train_test_split
-#from sklearn.feature_extraction.text import CountVectorizer, TfidVectorizer
-#from sklearn.metrics import accuracy_score, confusion_matrix
-
-
-
-#nlp
+#nlp imports
 import nltk
 from nltk.corpus import wordnet as wn
-#from nltk.corpus import genesis
 from nltk.stem import WordNetLemmatizer
+
 '''
 downloads = ['omw-1.4','genesis', 'wordnet', 'punkt', 'averaged_perceptron_tagger']
 
 for d in downloads:
     nltk.download(d)
 '''
+
 genesis_ic = wn.ic(genesis, False, 0.0)
 
 from nltk.tokenize import word_tokenize
-#from nltk.stem.porter import PorterStemmer
-#from nltk.stem import SnowballStemmer
-#from nltk.stem.lancaster import LancasterStemmer
-#from nltk.corpus import stopwords as sw
+
 
 #dataframe
 df = pd.read_csv('qa_full.csv')
@@ -60,7 +46,7 @@ def clean(txt):
                  'you', 'your', 'yours', '\'ve', '\'nt', '\'t']
 
     txt = txt.lower()
-    #only get acceptable chars
+    #only keep acceptable chars
     txt = ''.join(l for l in txt if l in symbols)
     #lemmatizing
     words = word_tokenize(txt)
@@ -75,5 +61,7 @@ cols = ['question', 'snippet', 'description']
 for c in cols:
     df[c] = df[c].apply(clean)
 
+#remove na's so can go through knn()
 df.fillna('', inplace = True)
+#save to new df for ease of access later
 df.to_csv('processed_qa.csv', index = False)

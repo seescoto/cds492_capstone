@@ -85,8 +85,8 @@ for i in range(len(df)):
         #total results
         nums.append(results['total'])
 
-
-df = df.reindex(index = range(573))
+df = df.drop(170)
+#df = df.reindex(index = range(573))
 
 df['snippet'] = snips
 df['description'] = descs

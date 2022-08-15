@@ -57,7 +57,11 @@
 		
 		%2.1. first exploration of the data (summary statistics, number of variables, which are the variables of interest, which you will discard, etc.) (10p)
 			
-		Using the bs4 package in python and multiple websites (\cite{tf1}, \cite{tf2}, \cite{tf3}, \cite{tf4}, \cite{tf5}, \cite{tf6}, \cite{tf7}), I gathered 573 statements and their truth values. My original goal was 500 statements, but because I did not manually check to see if there were similarities in each statement, 573 gives a good margin of error in case there are duplicate statements from two different websites. Then I used an API to scrape Google and collect the "featured snippet" that comes up when the claim is searched, the descriptions from the first 10 results, and the number of results that come up in the search \cite{a_api} \footnote{Note that I used a different API for this initial scrape than I plan to use when constructing my web app that will deploy the model. This is because this API allows for 1,000 searches per month which is convenient for populating a large dataset all at once, and the other API allows for 100 searches per day which is convenient for an app where fewer searches will be made more often.}. This gave me a total of five features, four of type string (`statement', `snippet', `description', `results') and one of type boolean (`truthValue').
+		Using the bs4 package in python and multiple websites (\cite{tf1}, \cite{tf2}, \cite{tf3}, \cite{tf4}, \cite{tf5}, \cite{tf6}, \cite{tf7}), I gathered 573 statements and their truth values. My original goal was 500 statements, but because I did not manually check to see if there were similarities in each statement, 573 gives a good margin of error in case there are duplicate statements from two different websites. Then I used an API to scrape Google and collect the "featured snippet" that comes up when the claim is searched, the descriptions from the first 10 results, and the number of results that come up in the search \cite{a_api}
+		% 
+		\footnote{Note that I used a different API for this initial scrape than I planned to use when constructing a web app to deploy the model. This is because this API allows for 1,000 searches per month which is convenient for populating a large dataset all at once, and the other API allows for 100 searches per day which is convenient for an app, where fewer searches will be made more often.}. 
+		%
+		This gave me a total of five features, four of type string (`statement', `snippet', `description', `results') and one of type boolean (`truthValue').
 		
 	\section{Methods}
 		
@@ -69,7 +73,8 @@
 		
 		I hope to classify these statements using a K nearest-neighbors algorithm. K nearest-neighbors (KNN) compares an instance to k other instances that are closest to it, aka its `neighbors.' Because of KNN's simplicity and ease of use, this seems like a good option. Although KNNS can be slower than other algorithms and suffer from the curse of dimensionality (slowing down significantly as more features are considered), because I don't have a very large dataset or very many features to test, I think I will be fine.
 		
-			
+		A KNN model that could use non-categorical and non-numerical features was not included in scikit-learn's base packages, so with the help of the Towards Data Science website \cite{tds} I created my own algorithm for the purposes of natural language processing. The simplicity of KNNs was very useful here, because I otherwise may not have understood how to implement the process in my own code. This method does have the drawback of being slower than other models, especially considering that I relied on a naive solution of nested for loops when building the many of the functions in the class.
+		
 		
 		%feedback
 		%CNNs and NLP are two very different things. Actually CNNs are better for image analysis and computer vision than for NLP. You don't have the time to use all of these methods.For classification purposes, you are better off in this case with a simple kmeans algorithm.
@@ -77,6 +82,12 @@
 		%For EDA, include the summary of the data that you scrapped and a data dictionary (which are the variables you are ultimately working with and what they represent).
 		
 	\section{Results}
+	
+	
+		%3.1. final results of your data analysis; these should be included in your GitHub repository as well, therefore submit the link to GitHub too (10p)
+		%3.2. description of the methodology you used and why (rationale) (10p).
+		%3.3. preliminary visualizations of your results (5p).
+	
 		
 		
 		Using seven public websites with true/false questions, I scraped both the questions and their truth values into a dataset, giving me 573 instances. Once the questions and truth values were set in the dataset, using an API I scraped Google to give a summary of what the search for each question would bring up, the number of results, and the descriptions of the first ten sites in the search. A data dictionary is as follows:
@@ -93,13 +104,24 @@
 			\item results: (type: integer) The number of results that Google will come up with after searching the question. Ex. `most people have 12 toes' will return \texttt{1772}| results.
 		\end{itemize}
 		
-		A KNN model based on non-categorical and non-numerical values was not included in scikit-learn's base packages, so with the help of the Towards Data Science website \cite{tds} I created my own algorithm for the purposes of natural language processing. The simplicity of KNNs was very useful here, because I otherwise may not have understood how to implement the process in my own code. This method does have the drawback of being slower than other models, especially considering that I relied on a naive solution of nested for loops when building the functions in the class, but it is easy-to-use and fairly accurate. 
+		I created my own user-friendly KNN algorithm (as seen in \texttt{model.py}) that used the nltk package to compare statements and store their similarities in an adjacency matrix. Using this array, I was able to predict truth values of the same statements using different values of k, allowing me to see the number of `neighbors' that gave me the best results.
+		I was able to achieve a mean accuracy of BCNFNF at k = JCBVFNF, which I believe is sufficient considering the scope of this class and my access to computational resources. 
+		
+		With more computing power, I'm confident that I could increase the accuracy of this model by at least BCNSDFVNNSDVFD\%. One reason that the accuracy is so comparatively low is because, in order to get results in a reasonable amount of time, I had to partition the data into 6 segments so as to create six 80x20 adjacency matrices (requiring knn.process() to compare 9,600 text statements) as opposed to one 480x120 matrix that would require 57,600 comparisons. Comparing 9,600 segments and saving the results took me over two hours on my PC, so although the accuracy would be improved with a broader training set, attempting this would not have been realistic.
+		
+		Once the adjacency matrix has been calculated, however, knn.predict() takes a very short time to output results since it uses the same matrix for all values of k, so long as the training and testing set stay constant. If I had access to a computer that could run for 12+ hours uninterrupted, I would be able to analyze more.
 		
 		
-		%3. Submit the technical report that, additionally to what you have written before, also includes:
-		%3.1. final results of your data analysis; these should be included in your GitHub repository as well, therefore submit the link to GitHub too (10p)
-		%3.2. description of the methodology you used and why (rationale) (10p).
-		%3.3. preliminary visualizations of your results (5p).
+		%feedback
+		%What is the accuracy of KNN? It's not included here. Also, you need to populate the Readme page from GitHub with details of your project. Additionally you need to include visualizations of the results.
+		
+		
+		
+		
+		%week5
+		
+		%4.1. Final techincal report that includes the goal of the project (2p), the literature review (2p), the description of the data (3p), the description of the methods (3p), the results (3p) and the visualization of the results (3p). (total 16p).
+		%4.2. The GitHub repository link where you describe succintly your project on the first page (2p), you include the dataset and/or an open link to the dataset (2p), and your clean and commented code, that is running (5p). (total 9p).
 		
 	\bibliographystyle{unsrt}
 	\bibliography{492}
