@@ -13,6 +13,7 @@ import pandas as pd
 import nltk
 from nltk.corpus import wordnet as wn
 from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
 
 '''
 downloads = ['omw-1.4','genesis', 'wordnet', 'punkt', 'averaged_perceptron_tagger']
@@ -20,11 +21,6 @@ downloads = ['omw-1.4','genesis', 'wordnet', 'punkt', 'averaged_perceptron_tagge
 for d in downloads:
     nltk.download(d)
 '''
-
-genesis_ic = wn.ic(genesis, False, 0.0)
-
-from nltk.tokenize import word_tokenize
-
 
 #dataframe
 df = pd.read_csv('qa_full.csv')

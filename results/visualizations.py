@@ -54,8 +54,8 @@ def getAccuracies(k, dfs, arrays):
         accs.append(accuracy)
 
     return accs
-
-neighbors = range(1, 21)
+n = 41
+neighbors = range(1, n)
 results = [] #item = [#neighbors, accuracy]
 for k in neighbors:
     #get k and then accuracies of all 6 dfs
@@ -83,7 +83,7 @@ plt.scatter(ks, accs, s = 3, c = 'slateblue')
 kSmall = [i[0] for i in results]
 meanAccs = [np.mean(i[1]) for i in results]
 plt.plot(kSmall, meanAccs, lw = 3, c = 'slateblue')
-plt.hlines(xmin = 0, xmax = 21, y = 0.5, color = 'red', linestyles = '--',
+plt.hlines(xmin = 0, xmax = n, y = 0.5, color = 'red', linestyles = '--',
             label = '50% accuracy')
 plt.xticks()
 plt.ylabel('Accuracy')
@@ -96,8 +96,8 @@ plt.figure(1)
 bp = plt.boxplot([i[1] for i in results])
 for m in bp['medians']:
     m.set(color = 'darkviolet', linewidth = 2)
-#plt.xticks(rotation = 90, fontsize = 6)
-plt.hlines(xmin = 0, xmax = 21, y = 0.5, color = 'red', linestyles = '--',
+plt.xticks(rotation = 45, fontsize = 6)
+plt.hlines(xmin = 0, xmax = n, y = 0.5, color = 'red', linestyles = '--',
             label = '50% accuracy', linewidth = 1.5)
 plt.ylabel('Accuracy')
 plt.xlabel('# of neighbors')

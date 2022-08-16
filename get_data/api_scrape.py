@@ -58,35 +58,34 @@ headers = {"x-rapidapi-key": config.api_key,
 snips = []
 descs = []
 nums = []
+
+#KEY ERROR AT 170 BC OF MISSING VALUES, JUST DROP
+df = df.drop(170)
+
 for i in range(len(df)):
 
-    #key error at 170, just skip it
-    if i != 170:
-        query = {'q': df['question'][i]}
-        results = requests.get("https://rapidapi.p.rapidapi.com/api/v1/search/" +
-                               urllib.parse.urlencode(query), headers = headers)
-        results = results.json()
+    query = {'q': df['question'][i]}
+    results = requests.get("https://rapidapi.p.rapidapi.com/api/v1/search/" +
+                           urllib.parse.urlencode(query), headers = headers)
+    results = results.json()
 
-        #snippet column
-        if 'featured_snippet' in results.keys():
-            snippet = results['featured_snippet']['featured_snippet']
-            snips.append(snippet)
-        else:
-            snips.append(None)
+    #snippet column
+    if 'featured_snippet' in results.keys():
+        snippet = results['featured_snippet']['featured_snippet']
+        snips.append(snippet)
+    else:
+        snips.append(None)
 
-        #description column
-        description = ""
-        for j in results['results']:
-            d = j['description']
-            if len(d) > 3:#so even just the word 'true' could be added if needed
-                description += d + "\n"
-        descs.append(description)
+    #description column
+    description = ""
+    for j in results['results']:
+        d = j['description']
+        if len(d) > 3:#so even just the word 'true' could be added if needed
+            description += d + "\n"
+    descs.append(description)
 
-        #total results
-        nums.append(results['total'])
-
-df = df.drop(170)
-#df = df.reindex(index = range(573))
+    #total results
+    nums.append(results['total'])
 
 df['snippet'] = snips
 df['description'] = descs
